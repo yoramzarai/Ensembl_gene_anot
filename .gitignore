@@ -1,0 +1,5 @@
+Ensembl_*_gene_annotations/
+.ipynb_checkpoints/
+Reports/
+.DS_Store
+.vscode/
