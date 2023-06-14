@@ -14653,15 +14653,15 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">Select a gene and a corresponding transcript.</span>
 <span class="sd">&#39;&#39;&#39;</span>
-<span class="c1">#gene, transcript_id = &#39;EGFR&#39;, &#39;ENST00000275493&#39;</span>
+<span class="n">gene</span><span class="p">,</span> <span class="n">transcript_id</span> <span class="o">=</span> <span class="s1">&#39;EGFR&#39;</span><span class="p">,</span> <span class="s1">&#39;ENST00000275493&#39;</span>
 <span class="c1">#gene, transcript_id = &#39;IDH1&#39;, &#39;ENST00000345146&#39;</span>
-<span class="n">gene</span><span class="p">,</span> <span class="n">transcript_id</span> <span class="o">=</span> <span class="s1">&#39;PIK3CA&#39;</span><span class="p">,</span> <span class="s1">&#39;ENST00000263967&#39;</span>
+<span class="c1">#gene, transcript_id = &#39;PIK3CA&#39;, &#39;ENST00000263967&#39;</span>
 
 <span class="c1">#gene, transcript_id = &#39;PIK3C2A&#39;, &#39;ENST00000533645&#39;</span>
 <span class="c1">#gene, transcript_id = &#39;KLF16&#39;, &#39;ENST00000250916&#39;</span>
@@ -14704,15 +14704,12 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">General information</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="c1"># get the annotation source</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">gene</span><span class="si">}</span><span class="s2"> annotation source: </span><span class="si">{</span><span class="n">gene_obj</span><span class="o">.</span><span class="n">source</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">gene</span><span class="si">=}</span><span class="s2"> information:&quot;</span><span class="p">)</span>
 <span class="n">gene_obj</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 
@@ -14726,8 +14723,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 <span class="c1"># start and stop codons positions</span>
 <span class="k">if</span> <span class="p">(</span><span class="n">codons_info</span> <span class="o">:=</span> <span class="n">gene_obj</span><span class="o">.</span><span class="n">start_and_stop_codons_pos</span><span class="p">(</span><span class="n">transcript_id</span><span class="p">))</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">First bp of the Start codon located in chr</span><span class="si">{</span><span class="n">gene_obj</span><span class="o">.</span><span class="n">chrm</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">codons_info</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2">, and is bp #</span><span class="si">{</span><span class="n">codons_info</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> in the RNA&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;First bp of the Stop codon located in chr</span><span class="si">{</span><span class="n">gene_obj</span><span class="o">.</span><span class="n">chrm</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">codons_info</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2">, and is bp #</span><span class="si">{</span><span class="n">codons_info</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> in the RNA&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">First bp of the Start codon located in chr</span><span class="si">{</span><span class="n">gene_obj</span><span class="o">.</span><span class="n">chrm</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">codons_info</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2">, and is bp #</span><span class="si">{</span><span class="n">codons_info</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> in the RNA.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;First bp of the Stop codon located in chr</span><span class="si">{</span><span class="n">gene_obj</span><span class="o">.</span><span class="n">chrm</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">codons_info</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2">, and is bp #</span><span class="si">{</span><span class="n">codons_info</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> in the RNA.&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14747,36 +14744,36 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>PIK3CA annotation source: /Users/yoramzarai/work/mystuff/Ramot/Projects/Cancer_mut/Data/Ensembl_gene_annotation/Homo_sapiens.GRCh38.109.gff3
-
-gene=&#39;PIK3CA&#39; information:
-Gene name=PIK3CA, Gene ID=ENSG00000121879
+<pre>
+gene=&#39;EGFR&#39; information:
+Gene name=EGFR, Gene ID=ENSG00000146648
 Source=/Users/yoramzarai/work/mystuff/Ramot/Projects/Cancer_mut/Data/Ensembl_gene_annotation/Homo_sapiens.GRCh38.109.gff3
 Positive strand=True.
-Type=protein_coding, version=6.
-Description=phosphatidylinositol-4%2C5-bisphosphate 3-kinase catalytic subunit alpha [Source:HGNC Symbol%3BAcc:HGNC:8975]
-Gene region=chr3:179,148,114-179,240,093.
-10 transcripts.
+Type=protein_coding, version=21.
+Description=epidermal growth factor receptor [Source:HGNC Symbol%3BAcc:HGNC:3236]
+Gene region=chr7:55,019,017-55,211,628.
+11 transcripts.
 
 transcripts:
-PIK3CA transcript IDs:
-1. ENST00000477735
-2. ENST00000263967
-3. ENST00000643187
-4. ENST00000675786
-5. ENST00000468036
-6. ENST00000675467
-7. ENST00000674534
-8. ENST00000674622
-9. ENST00000462255
-10. ENST00000675796
+EGFR transcript IDs:
+1. ENST00000344576
+2. ENST00000275493
+3. ENST00000455089
+4. ENST00000342916
+5. ENST00000420316
+6. ENST00000700144
+7. ENST00000450046
+8. ENST00000700145
+9. ENST00000485503
+10. ENST00000700146
+11. ENST00000700147
 
-Gene start = 179,148,114, gene end = 179,240,093
+Gene start = 55,019,017, gene end = 55,211,628
 
-transcript_id=&#39;ENST00000263967&#39;: start site (TSS) = 179,148,357, end site (TES) = 179,240,093.
+transcript_id=&#39;ENST00000275493&#39;: start site (TSS) = 55,019,017, end site (TES) = 55,211,628.
 
-First bp of the Start codon located in chr3:179,198,826, and is bp #324 in the RNA
-First bp of the Stop codon located in chr3:179,234,362, and is bp #3528 in the RNA
+First bp of the Start codon located in chr7:55,019,278, and is bp #262 in the RNA.
+First bp of the Stop codon located in chr7:55,205,615, and is bp #3892 in the RNA.
 </pre>
 </div>
 </div>
@@ -14790,7 +14787,7 @@ First bp of the Stop codon located in chr3:179,234,362, and is bp #3528 in the R
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># get a detailed information about a transcript</span>
@@ -14815,63 +14812,77 @@ First bp of the Stop codon located in chr3:179,234,362, and is bp #3528 in the R
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Detailed transcript_id=&#39;ENST00000263967&#39; information:
-ENST00000263967 information:
-Name=PIK3CA-201, ID=ENST00000263967.4, version=4
+<pre>Detailed transcript_id=&#39;ENST00000275493&#39; information:
+ENST00000275493 information:
+Name=EGFR-201, ID=ENST00000275493.7, version=7
 Type=mRNA, biotype=protein_coding
-Start=179,148,357, end=179,240,093
-protein ID = ENSP00000263967
-ccdsid=CCDS43171.1
-ORF start offset = 323, ORF end offset = 3,529 (0-based offsets from the beginning of the RNA)
-ORF start chromosome position = 179,198,826, ORF end chromosome position = 179,234,364
+Start=55,019,017, end=55,211,628
+protein ID = ENSP00000275493
+ccdsid=CCDS5514.1
+ORF start offset = 261, ORF end offset = 3,893 (0-based offsets from the beginning of the RNA)
+ORF start chromosome position = 55,019,278, ORF end chromosome position = 55,205,617
 Exon regions:
-	1. 179,148,357 - 179,148,603, ID=ENSE00001493081, phase=-1, end phase=-1
-	2. 179,198,750 - 179,199,177, ID=ENSE00001139995, phase=-1, end phase=1
-	3. 179,199,690 - 179,199,899, ID=ENSE00000997375, phase=1, end phase=1
-	4. 179,201,290 - 179,201,540, ID=ENSE00001077693, phase=1, end phase=0
-	5. 179,203,544 - 179,203,789, ID=ENSE00001077692, phase=0, end phase=0
-	6. 179,204,503 - 179,204,588, ID=ENSE00001077694, phase=0, end phase=2
-	7. 179,209,595 - 179,209,700, ID=ENSE00001077691, phase=2, end phase=0
-	8. 179,210,186 - 179,210,338, ID=ENSE00001128470, phase=0, end phase=0
-	9. 179,210,431 - 179,210,565, ID=ENSE00001128465, phase=0, end phase=0
-	10. 179,218,210 - 179,218,334, ID=ENSE00001077674, phase=0, end phase=2
-	11. 179,219,196 - 179,219,277, ID=ENSE00000826291, phase=2, end phase=0
-	12. 179,219,571 - 179,219,735, ID=ENSE00000826292, phase=0, end phase=0
-	13. 179,219,949 - 179,220,052, ID=ENSE00003485038, phase=0, end phase=2
-	14. 179,220,986 - 179,221,157, ID=ENSE00003568097, phase=2, end phase=0
-	15. 179,224,081 - 179,224,187, ID=ENSE00003489671, phase=0, end phase=2
-	16. 179,224,700 - 179,224,821, ID=ENSE00003485539, phase=2, end phase=1
-	17. 179,225,962 - 179,226,040, ID=ENSE00000826297, phase=1, end phase=2
-	18. 179,229,272 - 179,229,442, ID=ENSE00000826298, phase=2, end phase=2
-	19. 179,230,004 - 179,230,121, ID=ENSE00000826299, phase=2, end phase=0
-	20. 179,230,225 - 179,230,376, ID=ENSE00000826300, phase=0, end phase=2
-	21. 179,234,094 - 179,240,093, ID=ENSE00001139987, phase=2, end phase=-1
+	1. 55,019,017 - 55,019,365, ID=ENSE00001841347, phase=-1, end phase=1
+	2. 55,142,286 - 55,142,437, ID=ENSE00003541288, phase=1, end phase=0
+	3. 55,143,305 - 55,143,488, ID=ENSE00001704157, phase=0, end phase=1
+	4. 55,146,606 - 55,146,740, ID=ENSE00001798125, phase=1, end phase=1
+	5. 55,151,294 - 55,151,362, ID=ENSE00001683983, phase=1, end phase=1
+	6. 55,152,546 - 55,152,664, ID=ENSE00001652975, phase=1, end phase=0
+	7. 55,154,011 - 55,154,152, ID=ENSE00001623732, phase=0, end phase=1
+	8. 55,155,830 - 55,155,946, ID=ENSE00001751179, phase=1, end phase=1
+	9. 55,156,533 - 55,156,659, ID=ENSE00001084929, phase=1, end phase=2
+	10. 55,156,759 - 55,156,832, ID=ENSE00001084931, phase=2, end phase=1
+	11. 55,157,663 - 55,157,753, ID=ENSE00001084926, phase=1, end phase=2
+	12. 55,160,139 - 55,160,338, ID=ENSE00001084941, phase=2, end phase=1
+	13. 55,161,499 - 55,161,631, ID=ENSE00001084939, phase=1, end phase=2
+	14. 55,163,733 - 55,163,823, ID=ENSE00001084927, phase=2, end phase=0
+	15. 55,165,280 - 55,165,437, ID=ENSE00001627115, phase=0, end phase=2
+	16. 55,171,175 - 55,171,213, ID=ENSE00001768076, phase=2, end phase=2
+	17. 55,172,983 - 55,173,124, ID=ENSE00002684637, phase=2, end phase=0
+	18. 55,173,921 - 55,174,043, ID=ENSE00001778519, phase=0, end phase=0
+	19. 55,174,722 - 55,174,820, ID=ENSE00001756460, phase=0, end phase=0
+	20. 55,181,293 - 55,181,478, ID=ENSE00001601336, phase=0, end phase=0
+	21. 55,191,719 - 55,191,874, ID=ENSE00001681524, phase=0, end phase=0
+	22. 55,192,766 - 55,192,841, ID=ENSE00001631695, phase=0, end phase=1
+	23. 55,198,717 - 55,198,863, ID=ENSE00003625684, phase=1, end phase=1
+	24. 55,200,316 - 55,200,413, ID=ENSE00001790701, phase=1, end phase=0
+	25. 55,201,188 - 55,201,355, ID=ENSE00001801208, phase=0, end phase=0
+	26. 55,201,735 - 55,201,782, ID=ENSE00001773562, phase=0, end phase=0
+	27. 55,202,517 - 55,202,625, ID=ENSE00001795780, phase=0, end phase=1
+	28. 55,205,256 - 55,211,628, ID=ENSE00001245887, phase=1, end phase=-1
 CDS regions:
-	1. 179,198,826 - 179,199,177, phase=0
-	2. 179,199,690 - 179,199,899, phase=2
-	3. 179,201,290 - 179,201,540, phase=2
-	4. 179,203,544 - 179,203,789, phase=0
-	5. 179,204,503 - 179,204,588, phase=0
-	6. 179,209,595 - 179,209,700, phase=1
-	7. 179,210,186 - 179,210,338, phase=0
-	8. 179,210,431 - 179,210,565, phase=0
-	9. 179,218,210 - 179,218,334, phase=0
-	10. 179,219,196 - 179,219,277, phase=1
-	11. 179,219,571 - 179,219,735, phase=0
-	12. 179,219,949 - 179,220,052, phase=0
-	13. 179,220,986 - 179,221,157, phase=1
-	14. 179,224,081 - 179,224,187, phase=0
-	15. 179,224,700 - 179,224,821, phase=1
-	16. 179,225,962 - 179,226,040, phase=2
-	17. 179,229,272 - 179,229,442, phase=1
-	18. 179,230,004 - 179,230,121, phase=1
-	19. 179,230,225 - 179,230,376, phase=0
-	20. 179,234,094 - 179,234,364, phase=1
+	1. 55,019,278 - 55,019,365, phase=0
+	2. 55,142,286 - 55,142,437, phase=2
+	3. 55,143,305 - 55,143,488, phase=0
+	4. 55,146,606 - 55,146,740, phase=2
+	5. 55,151,294 - 55,151,362, phase=2
+	6. 55,152,546 - 55,152,664, phase=2
+	7. 55,154,011 - 55,154,152, phase=0
+	8. 55,155,830 - 55,155,946, phase=2
+	9. 55,156,533 - 55,156,659, phase=2
+	10. 55,156,759 - 55,156,832, phase=1
+	11. 55,157,663 - 55,157,753, phase=2
+	12. 55,160,139 - 55,160,338, phase=1
+	13. 55,161,499 - 55,161,631, phase=2
+	14. 55,163,733 - 55,163,823, phase=1
+	15. 55,165,280 - 55,165,437, phase=0
+	16. 55,171,175 - 55,171,213, phase=1
+	17. 55,172,983 - 55,173,124, phase=1
+	18. 55,173,921 - 55,174,043, phase=0
+	19. 55,174,722 - 55,174,820, phase=0
+	20. 55,181,293 - 55,181,478, phase=0
+	21. 55,191,719 - 55,191,874, phase=0
+	22. 55,192,766 - 55,192,841, phase=0
+	23. 55,198,717 - 55,198,863, phase=2
+	24. 55,200,316 - 55,200,413, phase=2
+	25. 55,201,188 - 55,201,355, phase=0
+	26. 55,201,735 - 55,201,782, phase=0
+	27. 55,202,517 - 55,202,625, phase=0
+	28. 55,205,256 - 55,205,617, phase=2
 5UTR regions:
-	1. 179,148,357 - 179,148,603
-	2. 179,198,750 - 179,198,825
+	1. 55,019,017 - 55,019,277
 3UTR regions:
-	1. 179,234,365 - 179,240,093
+	1. 55,205,618 - 55,211,628
 </pre>
 </div>
 </div>
@@ -14901,7 +14912,7 @@ CDS regions:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># exon-intron table</span>
@@ -14927,7 +14938,7 @@ CDS regions:
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>
-Exon-intron map for transcript_id=&#39;ENST00000263967&#39;:
+Exon-intron map for transcript_id=&#39;ENST00000275493&#39;:
 </pre>
 </div>
 </div>
@@ -14965,248 +14976,332 @@ Exon-intron map for transcript_id=&#39;ENST00000263967&#39;:
     <tr>
       <th>0</th>
       <td>Exon 1</td>
-      <td>(179148357, 179148603)</td>
-      <td>247</td>
+      <td>(55019017, 55019365)</td>
+      <td>349</td>
     </tr>
     <tr>
       <th>1</th>
       <td>Intron 1</td>
-      <td>(179148604, 179198749)</td>
-      <td>50146</td>
+      <td>(55019366, 55142285)</td>
+      <td>122920</td>
     </tr>
     <tr>
       <th>2</th>
       <td>Exon 2</td>
-      <td>(179198750, 179199177)</td>
-      <td>428</td>
+      <td>(55142286, 55142437)</td>
+      <td>152</td>
     </tr>
     <tr>
       <th>3</th>
       <td>Intron 2</td>
-      <td>(179199178, 179199689)</td>
-      <td>512</td>
+      <td>(55142438, 55143304)</td>
+      <td>867</td>
     </tr>
     <tr>
       <th>4</th>
       <td>Exon 3</td>
-      <td>(179199690, 179199899)</td>
-      <td>210</td>
+      <td>(55143305, 55143488)</td>
+      <td>184</td>
     </tr>
     <tr>
       <th>5</th>
       <td>Intron 3</td>
-      <td>(179199900, 179201289)</td>
-      <td>1390</td>
+      <td>(55143489, 55146605)</td>
+      <td>3117</td>
     </tr>
     <tr>
       <th>6</th>
       <td>Exon 4</td>
-      <td>(179201290, 179201540)</td>
-      <td>251</td>
+      <td>(55146606, 55146740)</td>
+      <td>135</td>
     </tr>
     <tr>
       <th>7</th>
       <td>Intron 4</td>
-      <td>(179201541, 179203543)</td>
-      <td>2003</td>
+      <td>(55146741, 55151293)</td>
+      <td>4553</td>
     </tr>
     <tr>
       <th>8</th>
       <td>Exon 5</td>
-      <td>(179203544, 179203789)</td>
-      <td>246</td>
+      <td>(55151294, 55151362)</td>
+      <td>69</td>
     </tr>
     <tr>
       <th>9</th>
       <td>Intron 5</td>
-      <td>(179203790, 179204502)</td>
-      <td>713</td>
+      <td>(55151363, 55152545)</td>
+      <td>1183</td>
     </tr>
     <tr>
       <th>10</th>
       <td>Exon 6</td>
-      <td>(179204503, 179204588)</td>
-      <td>86</td>
+      <td>(55152546, 55152664)</td>
+      <td>119</td>
     </tr>
     <tr>
       <th>11</th>
       <td>Intron 6</td>
-      <td>(179204589, 179209594)</td>
-      <td>5006</td>
+      <td>(55152665, 55154010)</td>
+      <td>1346</td>
     </tr>
     <tr>
       <th>12</th>
       <td>Exon 7</td>
-      <td>(179209595, 179209700)</td>
-      <td>106</td>
+      <td>(55154011, 55154152)</td>
+      <td>142</td>
     </tr>
     <tr>
       <th>13</th>
       <td>Intron 7</td>
-      <td>(179209701, 179210185)</td>
-      <td>485</td>
+      <td>(55154153, 55155829)</td>
+      <td>1677</td>
     </tr>
     <tr>
       <th>14</th>
       <td>Exon 8</td>
-      <td>(179210186, 179210338)</td>
-      <td>153</td>
+      <td>(55155830, 55155946)</td>
+      <td>117</td>
     </tr>
     <tr>
       <th>15</th>
       <td>Intron 8</td>
-      <td>(179210339, 179210430)</td>
-      <td>92</td>
+      <td>(55155947, 55156532)</td>
+      <td>586</td>
     </tr>
     <tr>
       <th>16</th>
       <td>Exon 9</td>
-      <td>(179210431, 179210565)</td>
-      <td>135</td>
+      <td>(55156533, 55156659)</td>
+      <td>127</td>
     </tr>
     <tr>
       <th>17</th>
       <td>Intron 9</td>
-      <td>(179210566, 179218209)</td>
-      <td>7644</td>
+      <td>(55156660, 55156758)</td>
+      <td>99</td>
     </tr>
     <tr>
       <th>18</th>
       <td>Exon 10</td>
-      <td>(179218210, 179218334)</td>
-      <td>125</td>
+      <td>(55156759, 55156832)</td>
+      <td>74</td>
     </tr>
     <tr>
       <th>19</th>
       <td>Intron 10</td>
-      <td>(179218335, 179219195)</td>
-      <td>861</td>
+      <td>(55156833, 55157662)</td>
+      <td>830</td>
     </tr>
     <tr>
       <th>20</th>
       <td>Exon 11</td>
-      <td>(179219196, 179219277)</td>
-      <td>82</td>
+      <td>(55157663, 55157753)</td>
+      <td>91</td>
     </tr>
     <tr>
       <th>21</th>
       <td>Intron 11</td>
-      <td>(179219278, 179219570)</td>
-      <td>293</td>
+      <td>(55157754, 55160138)</td>
+      <td>2385</td>
     </tr>
     <tr>
       <th>22</th>
       <td>Exon 12</td>
-      <td>(179219571, 179219735)</td>
-      <td>165</td>
+      <td>(55160139, 55160338)</td>
+      <td>200</td>
     </tr>
     <tr>
       <th>23</th>
       <td>Intron 12</td>
-      <td>(179219736, 179219948)</td>
-      <td>213</td>
+      <td>(55160339, 55161498)</td>
+      <td>1160</td>
     </tr>
     <tr>
       <th>24</th>
       <td>Exon 13</td>
-      <td>(179219949, 179220052)</td>
-      <td>104</td>
+      <td>(55161499, 55161631)</td>
+      <td>133</td>
     </tr>
     <tr>
       <th>25</th>
       <td>Intron 13</td>
-      <td>(179220053, 179220985)</td>
-      <td>933</td>
+      <td>(55161632, 55163732)</td>
+      <td>2101</td>
     </tr>
     <tr>
       <th>26</th>
       <td>Exon 14</td>
-      <td>(179220986, 179221157)</td>
-      <td>172</td>
+      <td>(55163733, 55163823)</td>
+      <td>91</td>
     </tr>
     <tr>
       <th>27</th>
       <td>Intron 14</td>
-      <td>(179221158, 179224080)</td>
-      <td>2923</td>
+      <td>(55163824, 55165279)</td>
+      <td>1456</td>
     </tr>
     <tr>
       <th>28</th>
       <td>Exon 15</td>
-      <td>(179224081, 179224187)</td>
-      <td>107</td>
+      <td>(55165280, 55165437)</td>
+      <td>158</td>
     </tr>
     <tr>
       <th>29</th>
       <td>Intron 15</td>
-      <td>(179224188, 179224699)</td>
-      <td>512</td>
+      <td>(55165438, 55171174)</td>
+      <td>5737</td>
     </tr>
     <tr>
       <th>30</th>
       <td>Exon 16</td>
-      <td>(179224700, 179224821)</td>
-      <td>122</td>
+      <td>(55171175, 55171213)</td>
+      <td>39</td>
     </tr>
     <tr>
       <th>31</th>
       <td>Intron 16</td>
-      <td>(179224822, 179225961)</td>
-      <td>1140</td>
+      <td>(55171214, 55172982)</td>
+      <td>1769</td>
     </tr>
     <tr>
       <th>32</th>
       <td>Exon 17</td>
-      <td>(179225962, 179226040)</td>
-      <td>79</td>
+      <td>(55172983, 55173124)</td>
+      <td>142</td>
     </tr>
     <tr>
       <th>33</th>
       <td>Intron 17</td>
-      <td>(179226041, 179229271)</td>
-      <td>3231</td>
+      <td>(55173125, 55173920)</td>
+      <td>796</td>
     </tr>
     <tr>
       <th>34</th>
       <td>Exon 18</td>
-      <td>(179229272, 179229442)</td>
-      <td>171</td>
+      <td>(55173921, 55174043)</td>
+      <td>123</td>
     </tr>
     <tr>
       <th>35</th>
       <td>Intron 18</td>
-      <td>(179229443, 179230003)</td>
-      <td>561</td>
+      <td>(55174044, 55174721)</td>
+      <td>678</td>
     </tr>
     <tr>
       <th>36</th>
       <td>Exon 19</td>
-      <td>(179230004, 179230121)</td>
-      <td>118</td>
+      <td>(55174722, 55174820)</td>
+      <td>99</td>
     </tr>
     <tr>
       <th>37</th>
       <td>Intron 19</td>
-      <td>(179230122, 179230224)</td>
-      <td>103</td>
+      <td>(55174821, 55181292)</td>
+      <td>6472</td>
     </tr>
     <tr>
       <th>38</th>
       <td>Exon 20</td>
-      <td>(179230225, 179230376)</td>
-      <td>152</td>
+      <td>(55181293, 55181478)</td>
+      <td>186</td>
     </tr>
     <tr>
       <th>39</th>
       <td>Intron 20</td>
-      <td>(179230377, 179234093)</td>
-      <td>3717</td>
+      <td>(55181479, 55191718)</td>
+      <td>10240</td>
     </tr>
     <tr>
       <th>40</th>
       <td>Exon 21</td>
-      <td>(179234094, 179240093)</td>
-      <td>6000</td>
+      <td>(55191719, 55191874)</td>
+      <td>156</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>Intron 21</td>
+      <td>(55191875, 55192765)</td>
+      <td>891</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>Exon 22</td>
+      <td>(55192766, 55192841)</td>
+      <td>76</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>Intron 22</td>
+      <td>(55192842, 55198716)</td>
+      <td>5875</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>Exon 23</td>
+      <td>(55198717, 55198863)</td>
+      <td>147</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>Intron 23</td>
+      <td>(55198864, 55200315)</td>
+      <td>1452</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>Exon 24</td>
+      <td>(55200316, 55200413)</td>
+      <td>98</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>Intron 24</td>
+      <td>(55200414, 55201187)</td>
+      <td>774</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>Exon 25</td>
+      <td>(55201188, 55201355)</td>
+      <td>168</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>Intron 25</td>
+      <td>(55201356, 55201734)</td>
+      <td>379</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>Exon 26</td>
+      <td>(55201735, 55201782)</td>
+      <td>48</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>Intron 26</td>
+      <td>(55201783, 55202516)</td>
+      <td>734</td>
+    </tr>
+    <tr>
+      <th>52</th>
+      <td>Exon 27</td>
+      <td>(55202517, 55202625)</td>
+      <td>109</td>
+    </tr>
+    <tr>
+      <th>53</th>
+      <td>Intron 27</td>
+      <td>(55202626, 55205255)</td>
+      <td>2630</td>
+    </tr>
+    <tr>
+      <th>54</th>
+      <td>Exon 28</td>
+      <td>(55205256, 55211628)</td>
+      <td>6373</td>
     </tr>
   </tbody>
 </table>
@@ -15224,7 +15319,7 @@ Exon-intron map for transcript_id=&#39;ENST00000263967&#39;:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># exon table</span>
@@ -15254,7 +15349,7 @@ Exon-intron map for transcript_id=&#39;ENST00000263967&#39;:
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>
-Exon map for transcript_id=&#39;ENST00000263967&#39;:
+Exon map for transcript_id=&#39;ENST00000275493&#39;:
 </pre>
 </div>
 </div>
@@ -15297,233 +15392,310 @@ Exon map for transcript_id=&#39;ENST00000263967&#39;:
     <tr>
       <th>0</th>
       <td>1</td>
-      <td>(179148357, 179148603)</td>
-      <td>247</td>
-      <td>[1, 247]</td>
-      <td>[0, 0]</td>
-      <td>[0, 0]</td>
-      <td>0</td>
-      <td>ENSE00001493081</td>
+      <td>(55019017, 55019365)</td>
+      <td>349</td>
+      <td>[1, 349]</td>
+      <td>[1, 30]</td>
+      <td>[1, 88]</td>
+      <td>2</td>
+      <td>ENSE00001841347</td>
     </tr>
     <tr>
       <th>1</th>
       <td>2</td>
-      <td>(179198750, 179199177)</td>
-      <td>428</td>
-      <td>[248, 675]</td>
-      <td>[1, 118]</td>
-      <td>[1, 352]</td>
-      <td>2</td>
-      <td>ENSE00001139995</td>
+      <td>(55142286, 55142437)</td>
+      <td>152</td>
+      <td>[350, 501]</td>
+      <td>[30, 80]</td>
+      <td>[89, 240]</td>
+      <td>0</td>
+      <td>ENSE00003541288</td>
     </tr>
     <tr>
       <th>2</th>
       <td>3</td>
-      <td>(179199690, 179199899)</td>
-      <td>210</td>
-      <td>[676, 885]</td>
-      <td>[118, 188]</td>
-      <td>[353, 562]</td>
+      <td>(55143305, 55143488)</td>
+      <td>184</td>
+      <td>[502, 685]</td>
+      <td>[81, 142]</td>
+      <td>[241, 424]</td>
       <td>2</td>
-      <td>ENSE00000997375</td>
+      <td>ENSE00001704157</td>
     </tr>
     <tr>
       <th>3</th>
       <td>4</td>
-      <td>(179201290, 179201540)</td>
-      <td>251</td>
-      <td>[886, 1136]</td>
-      <td>[188, 271]</td>
-      <td>[563, 813]</td>
-      <td>0</td>
-      <td>ENSE00001077693</td>
+      <td>(55146606, 55146740)</td>
+      <td>135</td>
+      <td>[686, 820]</td>
+      <td>[142, 187]</td>
+      <td>[425, 559]</td>
+      <td>2</td>
+      <td>ENSE00001798125</td>
     </tr>
     <tr>
       <th>4</th>
       <td>5</td>
-      <td>(179203544, 179203789)</td>
-      <td>246</td>
-      <td>[1137, 1382]</td>
-      <td>[272, 353]</td>
-      <td>[814, 1059]</td>
-      <td>0</td>
-      <td>ENSE00001077692</td>
+      <td>(55151294, 55151362)</td>
+      <td>69</td>
+      <td>[821, 889]</td>
+      <td>[187, 210]</td>
+      <td>[560, 628]</td>
+      <td>2</td>
+      <td>ENSE00001683983</td>
     </tr>
     <tr>
       <th>5</th>
       <td>6</td>
-      <td>(179204503, 179204588)</td>
-      <td>86</td>
-      <td>[1383, 1468]</td>
-      <td>[354, 382]</td>
-      <td>[1060, 1145]</td>
-      <td>1</td>
-      <td>ENSE00001077694</td>
+      <td>(55152546, 55152664)</td>
+      <td>119</td>
+      <td>[890, 1008]</td>
+      <td>[210, 249]</td>
+      <td>[629, 747]</td>
+      <td>0</td>
+      <td>ENSE00001652975</td>
     </tr>
     <tr>
       <th>6</th>
       <td>7</td>
-      <td>(179209595, 179209700)</td>
-      <td>106</td>
-      <td>[1469, 1574]</td>
-      <td>[382, 417]</td>
-      <td>[1146, 1251]</td>
-      <td>0</td>
-      <td>ENSE00001077691</td>
+      <td>(55154011, 55154152)</td>
+      <td>142</td>
+      <td>[1009, 1150]</td>
+      <td>[250, 297]</td>
+      <td>[748, 889]</td>
+      <td>2</td>
+      <td>ENSE00001623732</td>
     </tr>
     <tr>
       <th>7</th>
       <td>8</td>
-      <td>(179210186, 179210338)</td>
-      <td>153</td>
-      <td>[1575, 1727]</td>
-      <td>[418, 468]</td>
-      <td>[1252, 1404]</td>
-      <td>0</td>
-      <td>ENSE00001128470</td>
+      <td>(55155830, 55155946)</td>
+      <td>117</td>
+      <td>[1151, 1267]</td>
+      <td>[297, 336]</td>
+      <td>[890, 1006]</td>
+      <td>2</td>
+      <td>ENSE00001751179</td>
     </tr>
     <tr>
       <th>8</th>
       <td>9</td>
-      <td>(179210431, 179210565)</td>
-      <td>135</td>
-      <td>[1728, 1862]</td>
-      <td>[469, 513]</td>
-      <td>[1405, 1539]</td>
-      <td>0</td>
-      <td>ENSE00001128465</td>
+      <td>(55156533, 55156659)</td>
+      <td>127</td>
+      <td>[1268, 1394]</td>
+      <td>[336, 378]</td>
+      <td>[1007, 1133]</td>
+      <td>1</td>
+      <td>ENSE00001084929</td>
     </tr>
     <tr>
       <th>9</th>
       <td>10</td>
-      <td>(179218210, 179218334)</td>
-      <td>125</td>
-      <td>[1863, 1987]</td>
-      <td>[514, 555]</td>
-      <td>[1540, 1664]</td>
-      <td>1</td>
-      <td>ENSE00001077674</td>
+      <td>(55156759, 55156832)</td>
+      <td>74</td>
+      <td>[1395, 1468]</td>
+      <td>[378, 403]</td>
+      <td>[1134, 1207]</td>
+      <td>2</td>
+      <td>ENSE00001084931</td>
     </tr>
     <tr>
       <th>10</th>
       <td>11</td>
-      <td>(179219196, 179219277)</td>
-      <td>82</td>
-      <td>[1988, 2069]</td>
-      <td>[555, 582]</td>
-      <td>[1665, 1746]</td>
-      <td>0</td>
-      <td>ENSE00000826291</td>
+      <td>(55157663, 55157753)</td>
+      <td>91</td>
+      <td>[1469, 1559]</td>
+      <td>[403, 433]</td>
+      <td>[1208, 1298]</td>
+      <td>1</td>
+      <td>ENSE00001084926</td>
     </tr>
     <tr>
       <th>11</th>
       <td>12</td>
-      <td>(179219571, 179219735)</td>
-      <td>165</td>
-      <td>[2070, 2234]</td>
-      <td>[583, 637]</td>
-      <td>[1747, 1911]</td>
-      <td>0</td>
-      <td>ENSE00000826292</td>
+      <td>(55160139, 55160338)</td>
+      <td>200</td>
+      <td>[1560, 1759]</td>
+      <td>[433, 500]</td>
+      <td>[1299, 1498]</td>
+      <td>2</td>
+      <td>ENSE00001084941</td>
     </tr>
     <tr>
       <th>12</th>
       <td>13</td>
-      <td>(179219949, 179220052)</td>
-      <td>104</td>
-      <td>[2235, 2338]</td>
-      <td>[638, 672]</td>
-      <td>[1912, 2015]</td>
+      <td>(55161499, 55161631)</td>
+      <td>133</td>
+      <td>[1760, 1892]</td>
+      <td>[500, 544]</td>
+      <td>[1499, 1631]</td>
       <td>1</td>
-      <td>ENSE00003485038</td>
+      <td>ENSE00001084939</td>
     </tr>
     <tr>
       <th>13</th>
       <td>14</td>
-      <td>(179220986, 179221157)</td>
-      <td>172</td>
-      <td>[2339, 2510]</td>
-      <td>[672, 729]</td>
-      <td>[2016, 2187]</td>
+      <td>(55163733, 55163823)</td>
+      <td>91</td>
+      <td>[1893, 1983]</td>
+      <td>[544, 574]</td>
+      <td>[1632, 1722]</td>
       <td>0</td>
-      <td>ENSE00003568097</td>
+      <td>ENSE00001084927</td>
     </tr>
     <tr>
       <th>14</th>
       <td>15</td>
-      <td>(179224081, 179224187)</td>
-      <td>107</td>
-      <td>[2511, 2617]</td>
-      <td>[730, 765]</td>
-      <td>[2188, 2294]</td>
+      <td>(55165280, 55165437)</td>
+      <td>158</td>
+      <td>[1984, 2141]</td>
+      <td>[575, 627]</td>
+      <td>[1723, 1880]</td>
       <td>1</td>
-      <td>ENSE00003489671</td>
+      <td>ENSE00001627115</td>
     </tr>
     <tr>
       <th>15</th>
       <td>16</td>
-      <td>(179224700, 179224821)</td>
-      <td>122</td>
-      <td>[2618, 2739]</td>
-      <td>[765, 806]</td>
-      <td>[2295, 2416]</td>
-      <td>2</td>
-      <td>ENSE00003485539</td>
+      <td>(55171175, 55171213)</td>
+      <td>39</td>
+      <td>[2142, 2180]</td>
+      <td>[627, 640]</td>
+      <td>[1881, 1919]</td>
+      <td>1</td>
+      <td>ENSE00001768076</td>
     </tr>
     <tr>
       <th>16</th>
       <td>17</td>
-      <td>(179225962, 179226040)</td>
-      <td>79</td>
-      <td>[2740, 2818]</td>
-      <td>[806, 832]</td>
-      <td>[2417, 2495]</td>
-      <td>1</td>
-      <td>ENSE00000826297</td>
+      <td>(55172983, 55173124)</td>
+      <td>142</td>
+      <td>[2181, 2322]</td>
+      <td>[640, 687]</td>
+      <td>[1920, 2061]</td>
+      <td>0</td>
+      <td>ENSE00002684637</td>
     </tr>
     <tr>
       <th>17</th>
       <td>18</td>
-      <td>(179229272, 179229442)</td>
-      <td>171</td>
-      <td>[2819, 2989]</td>
-      <td>[832, 889]</td>
-      <td>[2496, 2666]</td>
-      <td>1</td>
-      <td>ENSE00000826298</td>
+      <td>(55173921, 55174043)</td>
+      <td>123</td>
+      <td>[2323, 2445]</td>
+      <td>[688, 728]</td>
+      <td>[2062, 2184]</td>
+      <td>0</td>
+      <td>ENSE00001778519</td>
     </tr>
     <tr>
       <th>18</th>
       <td>19</td>
-      <td>(179230004, 179230121)</td>
-      <td>118</td>
-      <td>[2990, 3107]</td>
-      <td>[889, 928]</td>
-      <td>[2667, 2784]</td>
+      <td>(55174722, 55174820)</td>
+      <td>99</td>
+      <td>[2446, 2544]</td>
+      <td>[729, 761]</td>
+      <td>[2185, 2283]</td>
       <td>0</td>
-      <td>ENSE00000826299</td>
+      <td>ENSE00001756460</td>
     </tr>
     <tr>
       <th>19</th>
       <td>20</td>
-      <td>(179230225, 179230376)</td>
-      <td>152</td>
-      <td>[3108, 3259]</td>
-      <td>[929, 979]</td>
-      <td>[2785, 2936]</td>
-      <td>1</td>
-      <td>ENSE00000826300</td>
+      <td>(55181293, 55181478)</td>
+      <td>186</td>
+      <td>[2545, 2730]</td>
+      <td>[762, 823]</td>
+      <td>[2284, 2469]</td>
+      <td>0</td>
+      <td>ENSE00001601336</td>
     </tr>
     <tr>
       <th>20</th>
       <td>21</td>
-      <td>(179234094, 179240093)</td>
-      <td>6000</td>
-      <td>[3260, 9259]</td>
-      <td>[979, 1068]</td>
-      <td>[2937, 3207]</td>
+      <td>(55191719, 55191874)</td>
+      <td>156</td>
+      <td>[2731, 2886]</td>
+      <td>[824, 875]</td>
+      <td>[2470, 2625]</td>
       <td>0</td>
-      <td>ENSE00001139987</td>
+      <td>ENSE00001681524</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>22</td>
+      <td>(55192766, 55192841)</td>
+      <td>76</td>
+      <td>[2887, 2962]</td>
+      <td>[876, 901]</td>
+      <td>[2626, 2701]</td>
+      <td>2</td>
+      <td>ENSE00001631695</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>23</td>
+      <td>(55198717, 55198863)</td>
+      <td>147</td>
+      <td>[2963, 3109]</td>
+      <td>[901, 950]</td>
+      <td>[2702, 2848]</td>
+      <td>2</td>
+      <td>ENSE00003625684</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>24</td>
+      <td>(55200316, 55200413)</td>
+      <td>98</td>
+      <td>[3110, 3207]</td>
+      <td>[950, 982]</td>
+      <td>[2849, 2946]</td>
+      <td>0</td>
+      <td>ENSE00001790701</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>25</td>
+      <td>(55201188, 55201355)</td>
+      <td>168</td>
+      <td>[3208, 3375]</td>
+      <td>[983, 1038]</td>
+      <td>[2947, 3114]</td>
+      <td>0</td>
+      <td>ENSE00001801208</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>26</td>
+      <td>(55201735, 55201782)</td>
+      <td>48</td>
+      <td>[3376, 3423]</td>
+      <td>[1039, 1054]</td>
+      <td>[3115, 3162]</td>
+      <td>0</td>
+      <td>ENSE00001773562</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>27</td>
+      <td>(55202517, 55202625)</td>
+      <td>109</td>
+      <td>[3424, 3532]</td>
+      <td>[1055, 1091]</td>
+      <td>[3163, 3271]</td>
+      <td>2</td>
+      <td>ENSE00001795780</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>28</td>
+      <td>(55205256, 55211628)</td>
+      <td>6373</td>
+      <td>[3533, 9905]</td>
+      <td>[1091, 1210]</td>
+      <td>[3272, 3633]</td>
+      <td>0</td>
+      <td>ENSE00001245887</td>
     </tr>
   </tbody>
 </table>
@@ -15541,7 +15713,7 @@ Exon map for transcript_id=&#39;ENST00000263967&#39;:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
@@ -15561,7 +15733,7 @@ Exon map for transcript_id=&#39;ENST00000263967&#39;:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -15605,22 +15777,22 @@ Exon map for transcript_id=&#39;ENST00000263967&#39;:
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>transcript_id=&#39;ENST00000263967&#39; contains 91,737 bps.
+<pre>transcript_id=&#39;ENST00000275493&#39; contains 192,612 bps.
 
 rna=
-AGTTCCGGTGCCGCCGCTGCGGCCGCTGAGGTGTCGGGCTGCTGCTGCCGCGGCCGCTGGGACTGGGGCTGGGGCCGCCGGCGAGGCAGGGCTCGGGCCCGGCCGGGCAGCTCCGGAGCGGCGGGGGAGAGGGGCCGGGAGGCGGGGGCCGTGCCGCCCGCTCTCCTCTCCCTCGGCGCCGCCGCCGCCGCCCGCGGGGCTGGGACCCGATGCGGTTAGAGCCGCGGAGCCTGGAAGAGCCCCGAGCGTTTCTGCTTTGGGACAACCATACATCTAATTCCTTAAAGTAGTTTTATATGTAAAACTTGCAAAGAATCAGAACAATGCCTCCACGACCATCATCAGGTGAACTGTGGGGCATCCACTTGATGCCCCCAAGAATCCTAGTAGAATGTTTACTACCAAATGGAATGATAGTGACTTTAGAATGCCTCCGTGAGGCTACATTAATAACCATAAAGCATGAACTATTTAAAGAAGCAAGAAAATACCCCCTCCATCAACTTCTTCAAGATGAATCTTCTTACATTTTCGTAAGTGTTACTCAAGAAGCAGAAAGGGAAGAATTTTTTGATGAAACAAGACGACTTTGTGACCTTCGGCTTTTTCAACCCTTTTTAAAAGTAATTGAACCAGTAGGCAACCGTGAAGAAAAGATCCTCAATCGAGAAATTGGTTTTGCTATCGGCATGCCAGTGTGTGAATTTGATATGGTTAAAGATCCAGAAGTACAGGACTTCCGAAGAAATATTCTGAACGTTTGTAAAGAAGCTGTGGATCTTAGGGACCTCAATTCACCTCATAGTAGAGCAATGTATGTCTATCCTCCAAATGTAGAATCTTCACCAGAATTGCCAAAGCACATATATAATAAATTAGATAAAGGGCAAATAATAGTGGTGATCTGGGTAATAGTTTCTCCAAATAATGACAAGCAGAAGTATACTCTGAAAATCAACCATGACTGTGTACCAGAACAAGTAATTGCTGAAGCAATCAGGAAAAAAACTCGAAGTATGTTGCTATCCTCTGAACAACTAAAACTCTGTGTTTTAGAATATCAGGGCAAGTATATTTTAAAAGTGTGTGGATGTGATGAATACTTCCTAGAAAAATATCCTCTGAGTCAGTATAAGTATATAAGAAGCTGTATAATGCTTGGGAGGATGCCCAATTTGATGTTGATGGCTAAAGAAAGCCTTTATTCTCAACTGCCAATGGACTGTTTTACAATGCCATCTTATTCCAGACGCATTTCCACAGCTACACCATATATGAATGGAGAAACATCTACAAAATCCCTTTGGGTTATAAATAGTGCACTCAGAATAAAAATTCTTTGTGCAACCTACGTGAATGTAAATATTCGAGACATTGATAAGATCTATGTTCGAACAGGTATCTACCATGGAGGAGAACCCTTATGTGACAATGTGAACACTCAAAGAGTACCTTGTTCCAATCCCAGGTGGAATGAATGGCTGAATTATGATATATACATTCCTGATCTTCCTCGTGCTGCTCGACTTTGCCTTTCCATTTGCTCTGTTAAAGGCCGAAAGGGTGCTAAAGAGGAACACTGTCCATTGGCATGGGGAAATATAAACTTGTTTGATTACACAGACACTCTAGTATCTGGAAAAATGGCTTTGAATCTTTGGCCAGTACCTCATGGATTAGAAGATTTGCTGAACCCTATTGGTGTTACTGGATCAAATCCAAATAAAGAAACTCCATGCTTAGAGTTGGAGTTTGACTGGTTCAGCAGTGTGGTAAAGTTCCCAGATATGTCAGTGATTGAAGAGCATGCCAATTGGTCTGTATCCCGAGAAGCAGGATTTAGCTATTCCCACGCAGGACTGAGTAACAGACTAGCTAGAGACAATGAATTAAGGGAAAATGACAAAGAACAGCTCAAAGCAATTTCTACACGAGATCCTCTCTCTGAAATCACTGAGCAGGAGAAAGATTTTCTATGGAGTCACAGACACTATTGTGTAACTATCCCCGAAATTCTACCCAAATTGCTTCTGTCTGTTAAATGGAATTCTAGAGATGAAGTAGCCCAGATGTATTGCTTGGTAAAAGATTGGCCTCCAATCAAACCTGAACAGGCTATGGAACTTCTGGACTGTAATTACCCAGATCCTATGGTTCGAGGTTTTGCTGTTCGGTGCTTGGAAAAATATTTAACAGATGACAAACTTTCTCAGTATTTAATTCAGCTAGTACAGGTCCTAAAATATGAACAATATTTGGATAACTTGCTTGTGAGATTTTTACTGAAGAAAGCATTGACTAATCAAAGGATTGGGCACTTTTTCTTTTGGCATTTAAAATCTGAGATGCACAATAAAACAGTTAGCCAGAGGTTTGGCCTGCTTTTGGAGTCCTATTGTCGTGCATGTGGGATGTATTTGAAGCACCTGAATAGGCAAGTCGAGGCAATGGAAAAGCTCATTAACTTAACTGACATTCTCAAACAGGAGAAGAAGGATGAAACACAAAAGGTACAGATGAAGTTTTTAGTTGAGCAAATGAGGCGACCAGATTTCATGGATGCTCTACAGGGCTTTCTGTCTCCTCTAAACCCTGCTCATCAACTAGGAAACCTCAGGCTTGAAGAGTGTCGAATTATGTCCTCTGCAAAAAGGCCACTGTGGTTGAATTGGGAGAACCCAGACATCATGTCAGAGTTACTGTTTCAGAACAATGAGATCATCTTTAAAAATGGGGATGATTTACGGCAAGATATGCTAACACTTCAAATTATTCGTATTATGGAAAATATCTGGCAAAATCAAGGTCTTGATCTTCGAATGTTACCTTATGGTTGTCTGTCAATCGGTGACTGTGTGGGACTTATTGAGGTGGTGCGAAATTCTCACACTATTATGCAAATTCAGTGCAAAGGCGGCTTGAAAGGTGCACTGCAGTTCAACAGCCACACACTACATCAGTGGCTCAAAGACAAGAACAAAGGAGAAATATATGATGCAGCCATTGACCTGTTTACACGTTCATGTGCTGGATACTGTGTAGCTACCTTCATTTTGGGAATTGGAGATCGTCACAATAGTAACATCATGGTGAAAGACGATGGACAACTGTTTCATATAGATTTTGGACACTTTTTGGATCACAAGAAGAAAAAATTTGGTTATAAACGAGAACGTGTGCCATTTGTTTTGACACAGGATTTCTTAATAGTGATTAGTAAAGGAGCCCAAGAATGCACAAAGACAAGAGAATTTGAGAGGTTTCAGGAGATGTGTTACAAGGCTTATCTAGCTATTCGACAGCATGCCAATCTCTTCATAAATCTTTTCTCAATGATGCTTGGCTCTGGAATGCCAGAACTACAATCTTTTGATGACATTGCATACATTCGAAAGACCCTAGCCTTAGATAAAACTGAGCAAGAGGCTTTGGAGTATTTCATGAAACAAATGAATGATGCACATCATGGTGGCTGGACAACAAAAATGGATTGGATCTTCCACACAATTAAACAGCATGCATTGAACTGAAAAGATAACTGAGAAAATGAAAGCTCACTCTGGATTCCACACTGCACTGTTAATAACTCTCAGCAGGCAAAGACCGATTGCATAGGAATTGCACAATCCATGAACAGCATTAGAATTTACAGCAAGAACAGAAATAAAATACTATATAATTTAAATAATGTAAACGCAAACAGGGTTTGATAGCACTTAAACTAGTTCATTTCAAAATTAAGCTTTAGAATAATGCGCAATTTCATGTTATGCCTTAAGTCCAAAAAGGTAAACTTTGAAGATTGTTTGTATCTTTTTTTAAAAAACAAAACAAAACAAAAATCCCCAAAATATATAGAAATGATGGAGAAGGAAAAAGTGATGGTTTTTTTTGTCTTGCAAATGTTCTATGTTTTGAAATGTGGACACAACAAAGGCTGTTATTGCATTAGGTGTAAGTAAACTGGAGTTTATGTTAAATTACATTGATTGGAAAAGAATGAAAATTTCTTATTTTTCCATTGCTGTTCAATTTATAGTTTGAAGTGGGTTTTTGACTGCTTGTTTAATGAAGAAAAATGCTTGGGGTGGAAGGGACTCTTGAGATTTCACCAGAGACTTTTTCTTTTTAATAAATCAAACCTTTTGATGATTTGAGGTTTTATCTGCAGTTTTGGAAGCAGTCACAAATGAGACCTGTTATAAGGTGGTATTTTTTTTTTTCTTCTGGACAGTATTTAAAGGATCTTATTCTTATTTCCCAGGGAAATTCTGGGCTCCCACAAAGTAAAAAAAAAAAAAAATCATAGAAAAAGAATGAGCAGGAATAGTTCTTATTCCAGAATTGTACAGTATTCACCTTAAGTTGATTTTTTTTCTCCTTCTGCAATTGAACTGAATACATTTTTCATGCATGTTTTCCAGAAAATAGAAGTATTAATGTTATTAAAAAGATTATTTTTTTTATTAAAGGCTATTTATATTATAGAAACTATCATTAATATATATTCTTTATTTACATGATCTGTCCCATAGTCATGCATTGTTTTGCACCCCAAATTTTTTATTGTTCATAGCAGCATGGTCAGCTTTCTTCTTGATCTATAGATGAGGCTCAGGCACTATCCCATTTATACCAATAACCAGTGTATAACTACTTAAGGAAAACATAAAAACTTCATCTTCTTTCCTTTTATTTCTTATGTGAATCTCCCGTCTTCCATTCTCTTTTATAATTGAGAATGTCTCAATCATATGAAATTAGTTACCAGAATTAACACAATTTAGACTATCTTCCTGATTCCTTAAACCCCTTTACTGAAGTATACTCATGAATAATACTTTAAAATATGGGGGAATAGAAACCATGAACTTTTTACCTTTTTAAACTATTTATCCATATCTCCAAAGTAGAACATTAAACCATTTTAAGATATGTCTCATTCCCAAGTAGTCAGAGCTCACTCTCCAACTTTATTAAATACTATTTGAGCACAGGACACATTCTTAAACATTTTGAAAAACATTAACCCAAGATGTAGAGGCTACTGCTAGTCGTCATTCTAGAATCTGATATTTTACTCTGTATTTGAAATGAATGATTAATGTCCTAGGAAATTAGCTTTAGCAGATGTCCAGGTGCCACATCAAAAAAGTGCAATAATTATTGACAGTTTTTTAGATTAGGCATATTATTGGAAAACAACTTTATAAAGAGTGAACATTGTATACTCTAGTAAAACAGCATCACTTTAAAAATATTCATTTATGAAATCTGTTACCTATAGTTGAAGTCTTGAGTAGTGAACAAGGGACTCTAATACCAATACTCTTAATATCTGGCTATTTTAGATCCCTTAAAGGGCATAATTATTGGAAATTTAGGTATTTCACTAAAGCATGTATATAATATTGCCAACAAGAAAAGTAAATTTGAAGATTAAGGGAACTTACTTCTGCAAACTGTCTTGCGATAGTTAAGCAGAATTTAAACTCTGTTTTAAGCAGGAAACCAGAAAGATTATTTTGCAGTTGTAGAAGATTTCATAACTTATTAAAACTTATTAACATTTTGTGTTGTTTAGATATAGGCAGTTGATACATACTAACATCCCAGCCTTTTCAATATCAGGGTTAAATTATAGGAAAACTCAGTAAAATGGTACAAATCTGAAAGTTTGATGGTAGAAACTGAAGATTTAACAGAGAACTGTGTTTTACCCGAGTGCCAAAAATGCTGTGAGCCTCCTTGCACAAAATTTATACCACTTTTGCATTTTTATCTATCAGTCCAGATAGTTGTCTCCCCTCCTTCTCCCAGGACCTCTCCACCATTAAAATGCACAAACCACATGGCCGATTTCACCATTTACATTTATTTTCAAAAGTTACTACAACCAAATTAATTCTATTAGAAGAAATGTAGACAAATTCTATAAAGACTATAGATTGTGACCTAAGAAAGAAATGAGGCAAAGAACCAAACATTGAATTAAATGCTACATGGGTGACTAAGATCTGTTTCAAGTCAGTGATAATATAGCCACTTCTGGGTACTTCAGTATCAGAGATCAGTTCTCGTGGTTTAGACAGTTCCTATCTATAGCTGACTATCCTTGTCCTTGAATATGGTGTAACTGACTATTGGCTCTACAGTTTTATTGGGCCACTTAAGAAATATTTCCTTGAATAATTATTTTGAGAAAAAGTCTAAAAGTAATAAAAATAATTTTAAACACACTGTAGTAAGAAATGACTGTTGGAAAATTATGCTTTCACTTTCTACCATATTCTCAGCTATACAAAACCATTTATTTTGAAGATTTTTAGACTACTGTTAATTTGAAATCTGTTACTCTTATTGTGGAATTTGTTTTTTTAAAAAAGATGTTTCTAATTGGATTTTTAAAAGAAGAATGGAATTTGGTTGCTATTTTACAATAGAACCTAAGCTTTTTGTGGTTCTTAGTGTCCTATGTAAAACTTAGTGTCAAAGTAATCAACTTTGAGATTTTCCCTTCTATTCTGCTTTATATTAAAAGCCCATTAGAAAATGGGAACCTGGTGAATATATAATGAATTGTAAAATATTTTAATGTGTAACTTTTTCAACTGTGAAACTGACTTGATTTTTTGATGAAAACAGCTGCTGATAAAGTATTTTGTGTAAAGTGTAGTTCTTATTAATCAGGAAAATGATGACTTGATTAGACTGTATATGCCCTCTTGGATTTTATTTTAAATGGATTGGTGACTTTCACATAGGTAAAACACAGTCCATCTGTATTCTTTTTTCCATCAAAAATCGAGTGATTTGGAATTATAAAAAAATTGTGAGCAGCCTATTTGAAAGGCATCATGGAAATTTCACAGCACAATAACACGGATTTGTTTTTTCTTAATGATGTAAATCCGTTTAATTCATACTTTGATCAATAGCCCATGCTTGCCAACTCTGAAGAAATTTAATTTCCAGCAGTATTTTAAAGCTAGCCTGTTAACTTTTTCTGAATATTTAAAGTTCCTCTTTTTTCTATGTCTGCACAAACTGCAGACCTGGGCTGGACCCACATACTCAAGAGTCCACCTTAAGAAATTATTTTGATGTCCAAGACATCACTAAAATATTTAAGTTTAAAGATAATATGTGGTGTTAATAGATTGTGGTGCTTTTACTATTTAAAGACAACTTTCATACTTCAGATGTTTTTGAGAAGAGGGGAATGTGAGGGGAGGGGGCAGAACAGGGAGGAGTTGTTTGAATGAATTACATTCTTTATATCCATCCTGCTCATTTGGGGCATGTCTTTAAGAGAAGGCTGAAAGTTGTGAGAGTATATTGTATACCGTAAGAGAATCAACTCTTCATCATGGATGGGATTGTGAAGGCTGAACTATAAAATTCAGCATTGACAGCATCCTCAATTAATAATTCTTGGTGACAGAATAATACAGCTGGGCTGTTTTTTAAAATATAAACAATACCATTTTTAATTATTACATTAAAAATTGTAAATATATCTATGTGCCATGGCCTGGGAAGCCTGCTTTCTTTTTTCATAAAAATTATTTTTACTGTATGAAAAGATCATGGGGTTTAGCTCAAAATATCTGTGGTCCTGATAAAATTGGATTGGTAACTCTACCTCAGAAGGAAAATGGGAAAAAAAAATAGATGAGTCACAATTCAATACTTCAAGCTCAGAAACTGTGCAGATCACTGAATTTTAGATTTATAAAGTCAGAGTTGGCATGCCTTGTTTTTAATGATATGGAAGACCTTAAGAAAAAAACTTGGCTGAAGTTTAATCGTTGGTCCAGCCATTTGAAAAAGGCAATAGTTTGAGGAGGTTCCCGAATTCGGCATTTGAAATTCATTTTGTTCTCTCTTCTTCATTATTAGTGCATTTGGTGTGTGTATACTTGCACACAATTCTGTTTGTGTACACACTGCTTGCTTAGCCCTAGTCAAGAGGCATCTTTTATAAAAGGTGTAAAGAAATATCAAGGTTCTAAAATTCGGAAGAGTTTAGAATTTATTAGGAGTTTCCCAAGTTGGGATGTTAGTCTTTAAATAAACTTCATGCACCTATTCCACTTAAGGTTTTGCACCTCCTTTTTATTAGTGCAGTGCCATTTCTTCTGCTTGATTTTAGGTATGTTAATATTCCAGCCTTGCTAGTTAGCATAAAGTGACAGGTGTGAGCCATGAGGAAATTTTCTGACTTAATTTGTACACAACTACATATAAGAGTTTTAGTGGAGGAAAAAAATTAGTCCCTTGTGCGTATACAGTAGTTAGGTAAATGATTTTTCTACCAACAGTATACTCCATTCCTCATGTAGGTAAGTACAGAAAAGGTTTTTAAATGTATTTTTTTAGCCAGTTAAAGTCTATGAATCTATCTGCAACCTTATTTAATCTGTCACTATAATAATTTTGTGGTTATGCTAAGAACCATGTATACTTTTAGGTATTCTTATTTTTGTCAATTTTTCTAGGTTGGCAAGGAGGCAGAAAACCTTCATTGTTTCATATTAAAATATAATTAGACTAAACTTAATTCTAGTATGAATTTCCAAAATCATTATCTATTTATTTCATTTTTATTTAATTTTGTTTTTATTTCATTTTTAAAAGTCCCTTGTTCAATTTAACTTATGTTCCTAAGAGAGGTTGGAGAACTTGGCCTTCATCTGATTTCAAAAATGTTTTGAGTTTCAAATGAAGTTAATGGTTTCAGTGTGATTCAGTCCTCAGACCTAATTGGGTTGAATAAAATCTAAAAGAATATACCCTTTTGGAGCATAACATTTTAATACCTTGGGGAATGTGGCACTACCAAAAGAAGACTACTAACACGTCAGATGTTCACCTGGAAGCTTTATCAAGAAATTCGAACCACCCTTTTGGCCCCATTAATTGTAGCAAGTTTATTTCTCTATATTTTGTCATTCAGTGAATTGAAGTCCTGTGGTATACTGCATTCATTAGAAGAAAAACGTTTTTAATGTCCTTTTAATGATGGCCCAGAAAGCATTTGACACAGCAAGATGCATGTGTTACTATATTGAGAATATAGAATAATAACAGTATCACTAAATTTAAGACCTCTTCCCAGTCTTGCTGTTCCTAGCAAGAAGTTTGGCCTGTGACTGCACTTACTGTTTATGCTCATCAGAAACTGTCAATGTCTGCTTTTCTTTAACTCTGCAGTCTGTAACATCACGCTGTTTATTAAAAAAAAAAAGAAAAATTA
+AGACGTCCGGGCAGCCCCCGGCGCAGCGCGGCCGCAGCAGCCTCCGCCCCCCGCACGGTGTGAGCGCCCGACGCGGCCGAGGCGGCCGGAGTCCCGAGCTAGCCCCGGCGGCCGCCGCCGCCCAGACCGGACGACAGGCCACCTCGTCGGCGTCCGCCCGAGTCCCCGCCTCGCCGCCAACGCCACAACCACCGCGCACGGCCCCCTGACTCCGTCCAGTATTGATCGGGAGAGCCGGAGCGAGCTCTTCGGGGAGCAGCGATGCGACCCTCCGGGACGGCCGGGGCAGCGCTCCTGGCGCTGCTGGCTGCGCTCTGCCCGGCGAGTCGGGCTCTGGAGGAAAAGAAAGTTTGCCAAGGCACGAGTAACAAGCTCACGCAGTTGGGCACTTTTGAAGATCATTTTCTCAGCCTCCAGAGGATGTTCAATAACTGTGAGGTGGTCCTTGGGAATTTGGAAATTACCTATGTGCAGAGGAATTATGATCTTTCCTTCTTAAAGACCATCCAGGAGGTGGCTGGTTATGTCCTCATTGCCCTCAACACAGTGGAGCGAATTCCTTTGGAAAACCTGCAGATCATCAGAGGAAATATGTACTACGAAAATTCCTATGCCTTAGCAGTCTTATCTAACTATGATGCAAATAAAACCGGACTGAAGGAGCTGCCCATGAGAAATTTACAGGAAATCCTGCATGGCGCCGTGCGGTTCAGCAACAACCCTGCCCTGTGCAACGTGGAGAGCATCCAGTGGCGGGACATAGTCAGCAGTGACTTTCTCAGCAACATGTCGATGGACTTCCAGAACCACCTGGGCAGCTGCCAAAAGTGTGATCCAAGCTGTCCCAATGGGAGCTGCTGGGGTGCAGGAGAGGAGAACTGCCAGAAACTGACCAAAATCATCTGTGCCCAGCAGTGCTCCGGGCGCTGCCGTGGCAAGTCCCCCAGTGACTGCTGCCACAACCAGTGTGCTGCAGGCTGCACAGGCCCCCGGGAGAGCGACTGCCTGGTCTGCCGCAAATTCCGAGACGAAGCCACGTGCAAGGACACCTGCCCCCCACTCATGCTCTACAACCCCACCACGTACCAGATGGATGTGAACCCCGAGGGCAAATACAGCTTTGGTGCCACCTGCGTGAAGAAGTGTCCCCGTAATTATGTGGTGACAGATCACGGCTCGTGCGTCCGAGCCTGTGGGGCCGACAGCTATGAGATGGAGGAAGACGGCGTCCGCAAGTGTAAGAAGTGCGAAGGGCCTTGCCGCAAAGTGTGTAACGGAATAGGTATTGGTGAATTTAAAGACTCACTCTCCATAAATGCTACGAATATTAAACACTTCAAAAACTGCACCTCCATCAGTGGCGATCTCCACATCCTGCCGGTGGCATTTAGGGGTGACTCCTTCACACATACTCCTCCTCTGGATCCACAGGAACTGGATATTCTGAAAACCGTAAAGGAAATCACAGGGTTTTTGCTGATTCAGGCTTGGCCTGAAAACAGGACGGACCTCCATGCCTTTGAGAACCTAGAAATCATACGCGGCAGGACCAAGCAACATGGTCAGTTTTCTCTTGCAGTCGTCAGCCTGAACATAACATCCTTGGGATTACGCTCCCTCAAGGAGATAAGTGATGGAGATGTGATAATTTCAGGAAACAAAAATTTGTGCTATGCAAATACAATAAACTGGAAAAAACTGTTTGGGACCTCCGGTCAGAAAACCAAAATTATAAGCAACAGAGGTGAAAACAGCTGCAAGGCCACAGGCCAGGTCTGCCATGCCTTGTGCTCCCCCGAGGGCTGCTGGGGCCCGGAGCCCAGGGACTGCGTCTCTTGCCGGAATGTCAGCCGAGGCAGGGAATGCGTGGACAAGTGCAACCTTCTGGAGGGTGAGCCAAGGGAGTTTGTGGAGAACTCTGAGTGCATACAGTGCCACCCAGAGTGCCTGCCTCAGGCCATGAACATCACCTGCACAGGACGGGGACCAGACAACTGTATCCAGTGTGCCCACTACATTGACGGCCCCCACTGCGTCAAGACCTGCCCGGCAGGAGTCATGGGAGAAAACAACACCCTGGTCTGGAAGTACGCAGACGCCGGCCATGTGTGCCACCTGTGCCATCCAAACTGCACCTACGGATGCACTGGGCCAGGTCTTGAAGGCTGTCCAACGAATGGGCCTAAGATCCCGTCCATCGCCACTGGGATGGTGGGGGCCCTCCTCTTGCTGCTGGTGGTGGCCCTGGGGATCGGCCTCTTCATGCGAAGGCGCCACATCGTTCGGAAGCGCACGCTGCGGAGGCTGCTGCAGGAGAGGGAGCTTGTGGAGCCTCTTACACCCAGTGGAGAAGCTCCCAACCAAGCTCTCTTGAGGATCTTGAAGGAAACTGAATTCAAAAAGATCAAAGTGCTGGGCTCCGGTGCGTTCGGCACGGTGTATAAGGGACTCTGGATCCCAGAAGGTGAGAAAGTTAAAATTCCCGTCGCTATCAAGGAATTAAGAGAAGCAACATCTCCGAAAGCCAACAAGGAAATCCTCGATGAAGCCTACGTGATGGCCAGCGTGGACAACCCCCACGTGTGCCGCCTGCTGGGCATCTGCCTCACCTCCACCGTGCAGCTCATCACGCAGCTCATGCCCTTCGGCTGCCTCCTGGACTATGTCCGGGAACACAAAGACAATATTGGCTCCCAGTACCTGCTCAACTGGTGTGTGCAGATCGCAAAGGGCATGAACTACTTGGAGGACCGTCGCTTGGTGCACCGCGACCTGGCAGCCAGGAACGTACTGGTGAAAACACCGCAGCATGTCAAGATCACAGATTTTGGGCTGGCCAAACTGCTGGGTGCGGAAGAGAAAGAATACCATGCAGAAGGAGGCAAAGTGCCTATCAAGTGGATGGCATTGGAATCAATTTTACACAGAATCTATACCCACCAGAGTGATGTCTGGAGCTACGGGGTGACTGTTTGGGAGTTGATGACCTTTGGATCCAAGCCATATGACGGAATCCCTGCCAGCGAGATCTCCTCCATCCTGGAGAAAGGAGAACGCCTCCCTCAGCCACCCATATGTACCATCGATGTCTACATGATCATGGTCAAGTGCTGGATGATAGACGCAGATAGTCGCCCAAAGTTCCGTGAGTTGATCATCGAATTCTCCAAAATGGCCCGAGACCCCCAGCGCTACCTTGTCATTCAGGGGGATGAAAGAATGCATTTGCCAAGTCCTACAGACTCCAACTTCTACCGTGCCCTGATGGATGAAGAAGACATGGACGACGTGGTGGATGCCGACGAGTACCTCATCCCACAGCAGGGCTTCTTCAGCAGCCCCTCCACGTCACGGACTCCCCTCCTGAGCTCTCTGAGTGCAACCAGCAACAATTCCACCGTGGCTTGCATTGATAGAAATGGGCTGCAAAGCTGTCCCATCAAGGAAGACAGCTTCTTGCAGCGATACAGCTCAGACCCCACAGGCGCCTTGACTGAGGACAGCATAGACGACACCTTCCTCCCAGTGCCTGAATACATAAACCAGTCCGTTCCCAAAAGGCCCGCTGGCTCTGTGCAGAATCCTGTCTATCACAATCAGCCTCTGAACCCCGCGCCCAGCAGAGACCCACACTACCAGGACCCCCACAGCACTGCAGTGGGCAACCCCGAGTATCTCAACACTGTCCAGCCCACCTGTGTCAACAGCACATTCGACAGCCCTGCCCACTGGGCCCAGAAAGGCAGCCACCAAATTAGCCTGGACAACCCTGACTACCAGCAGGACTTCTTTCCCAAGGAAGCCAAGCCAAATGGCATCTTTAAGGGCTCCACAGCTGAAAATGCAGAATACCTAAGGGTCGCGCCACAAAGCAGTGAATTTATTGGAGCATGACCACGGAGGATAGTATGAGCCCTAAAAATCCAGACTCTTTCGATACCCAGGACCAAGCCACAGCAGGTCCTCCATCCCAACAGCCATGCCCGCATTAGCTCTTAGACCCACAGACTGGTTTTGCAACGTTTACACCGACTAGCCAGGAAGTACTTCCACCTCGGGCACATTTTGGGAAGTTGCATTCCTTTGTCTTCAAACTGTGAAGCATTTACAGAAACGCATCCAGCAAGAATATTGTCCCTTTGAGCAGAAATTTATCTTTCAAAGAGGTATATTTGAAAAAAAAAAAAAGTATATGTGAGGATTTTTATTGATTGGGGATCTTGGAGTTTTTCATTGTCGCTATTGATTTTTACTTCAATGGGCTCTTCCAACAAGGAAGAAGCTTGCTGGTAGCACTTGCTACCCTGAGTTCATCCAGGCCCAACTGTGAGCAAGGAGCACAAGCCACAAGTCTTCCAGAGGATGCTTGATTCCAGTGGTTCTGCTTCAAGGCTTCCACTGCAAAACACTAAAGATCCAAGAAGGCCTTCATGGCCCCAGCAGGCCGGATCGGTACTGTATCAAGTCATGGCAGGTACAGTAGGATAAGCCACTCTGTCCCTTCCTGGGCAAAGAAGAAACGGAGGGGATGGAATTCTTCCTTAGACTTACTTTTGTAAAAATGTCCCCACGGTACTTACTCCCCACTGATGGACCAGTGGTTTCCAGTCATGAGCGTTAGACTGACTTGTTTGTCTTCCATTCCATTGTTTTGAAACTCAGTATGCTGCCCCTGTCTTGCTGTCATGAAATCAGCAAGAGAGGATGACACATCAAATAATAACTCGGATTCCAGCCCACATTGGATTCATCAGCATTTGGACCAATAGCCCACAGCTGAGAATGTGGAATACCTAAGGATAGCACCGCTTTTGTTCTCGCAAAAACGTATCTCCTAATTTGAGGCTCAGATGAAATGCATCAGGTCCTTTGGGGCATAGATCAGAAGACTACAAAAATGAAGCTGCTCTGAAATCTCCTTTAGCCATCACCCCAACCCCCCAAAATTAGTTTGTGTTACTTATGGAAGATAGTTTTCTCCTTTTACTTCACTTCAAAAGCTTTTTACTCAAAGAGTATATGTTCCCTCCAGGTCAGCTGCCCCCAAACCCCCTCCTTACGCTTTGTCACACAAAAAGTGTCTCTGCCTTGAGTCATCTATTCAAGCACTTACAGCTCTGGCCACAACAGGGCATTTTACAGGTGCGAATGACAGTAGCATTATGAGTAGTGTGGAATTCAGGTAGTAAATATGAAACTAGGGTTTGAAATTGATAATGCTTTCACAACATTTGCAGATGTTTTAGAAGGAAAAAAGTTCCTTCCTAAAATAATTTCTCTACAATTGGAAGATTGGAAGATTCAGCTAGTTAGGAGCCCACCTTTTTTCCTAATCTGTGTGTGCCCTGTAACCTGACTGGTTAACAGCAGTCCTTTGTAAACAGTGTTTTAAACTCTCCTAGTCAATATCCACCCCATCCAATTTATCAAGGAAGAAATGGTTCAGAAAATATTTTCAGCCTACAGTTATGTTCAGTCACACACACATACAAAATGTTCCTTTTGCTTTTAAAGTAATTTTTGACTCCCAGATCAGTCAGAGCCCCTACAGCATTGTTAAGAAAGTATTTGATTTTTGTCTCAATGAAAATAAAACTATATTCATTTCCACTCTATTATGCTCTCAAATACCCCTAAGCATCTATACTAGCCTGGTATGGGTATGAAAGATACAAAGATAAATAAAACATAGTCCCTGATTCTAAGAAATTCACAATTTAGCAAAGGAAATGGACTCATAGATGCTAACCTTAAAACAACGTGACAAATGCCAGACAGGACCCATCAGCCAGGCACTGTGAGAGCACAGAGCAGGGAGGTTGGGTCCTGCCTGAGGAGACCTGGAAGGGAGGCCTCACAGGAGGATGACCAGGTCTCAGTCAGCGGGGAGGTGGAAAGTGCAGGTGCATCAGGGGCACCCTGACCGAGGAAACAGCTGCCAGAGGCCTCCACTGCTAAAGTCCACATAAGGCTGAGGTCAGTCACCCTAAACAACCTGCTCCCTCTAAGCCAGGGGATGAGCTTGGAGCATCCCACAAGTTCCCTAAAAGTTGCAGCCCCCAGGGGGATTTTGAGCTATCATCTCTGCACATGCTTAGTGAGAAGACTACACAACATTTCTAAGAATCTGAGATTTTATATTGTCAGTTAACCACTTTCATTATTCATTCACCTCAGGACATGCAGAAATATTTCAGTCAGAACTGGGAAACAGAAGGACCTACATTCTGCTGTCACTTATGTGTCAAGAAGCAGATGATCGATGAGGCAGGTCAGTTGTAAGTGAGTCACATTGTAGCATTAAATTCTAGTATTTTTGTAGTTTGAAACAGTAACTTAATAAAAGAGCAAAAGCTATTCTAGCTTTCTTCTTCATATTTTAATTTTCCACCATAAAGTTTAGTTGCTAAATTCTATTAATTTTAAGATTGTGCTTCCCAAAATAGTTCTCACTTCATCTGTCCAGGGAGGCACAGTTCTGTCTGGTAGAAGCCGCAAAGCCCTTAGCCTCTTCACGGATCTGGCGACTGTGATGGGCAGGTCAGGAGAGGAGCTGCCCAAAGTCCCATGATTTTCACCTAACAGCCCTGATCAGTCAGTACTCAAAGCTTGGACTCCATCCCTGAAGGTCTTCCTGATTGATAGCCTGGCCTTAATACCCTACAGAAAGCCTGTCCATTGGCTGTTTCTTCCTCAGTCAGTTCCTGGAAGACCTTACCCCATGACCCCAGCTTCAGATGTGGTCTTTGGAAACAGAGGTCGAAGGAAAGTAAGGAGCTGAGAGCTCACATTCATAGGTGCCGCCAGCCTTCGTGCATCTTCTTGCATCATCTCTAAGGAGCTCCTCTAATTACACCATGCCCGTCACCCCATGAGGGATCAGAGAAGGGATGAGTCTTCTAAACTCTATATTCGCTGTGAGTCCAGGTTGTAAGGGGGAGCACTGTGGATGCATCCTATTGCACTCCAGCTGATGACACCAAAGCTTAGGTGTTTGCTGAAAGTTCTTGATGTTGTGACTTACCACCCCTGCCTCACAACTGCAGACATAAGGGGACTATGGATTGCTTAGCAGGAAAGGCACTGGTTCTCAAGGGCGGCTGCCCTTGGGAATCTTCTGGTCCCAACCAGAAAGACTGTGGCTTGATTTTCTCAGGTGCAGCCCAGCCGTAGGGCCTTTTCAGAGCACCCCCTGGTTATTGCAACATTCATCAAAGTTTCTAGAACCTCTGGCCTAAAGGAAGGGCCTGGTGGGATCTACTTGGCACTCGCTGGGGGGCCACCCCCCAGTGCCACTCTCACTAGGCCTCTGATTGCACTTGTGTAGGATGAAGCTGGTGGGTGATGGGAACTCAGCACCTCCCCTCAGGCAGAAAAGAATCATCTGTGGAGCTTCAAAAGAAGGGGCCTGGAGTCTCTGCAGACCAATTCAACCCAAATCTCGGGGGCTCTTTCATGATTCTAATGGGCAACCAGGGTTGAAACCCTTATTTCTAGGGTCTTCAGTTGTACAAGACTGTGGGTCTGTACCAGAGCCCCCGTCAGAGTAGAATAAAAGGCTGGGTAGGGTAGAGATTCCCATGTGCAGTGGAGAGAACAATCTGCAGTCACTGATAAGCCTGAGACTTGGCTCATTTCAAAAGCGTTCAATTCATCCTCACCAGCAGTTCAGCTGGAAAGGGGCAAATACCCCCACCTGAGCTTTGAAAACGCCCTGGGACCCTCTGCATTCTCTAAGTAAGTTATAGAAACCAGTCTCTTCCCTCCTTTGTGAGTGAGCTGCTATTCCACGTAGGCAACACCTGTTGAAATTGCCCTCAATGTCTACTCTGCATTTCTTTCTTGTGATAAGCACACACTTTTATTGCAACATAATGATCTGCTCACATTTCCTTGCCTGGGGGCTGTAAAACCTTACAGAACAGAAATCCTTGCCTCTTTCACCAGCCACACCTGCCATACCAGGGGTACAGCTTTGTACTATTGAAGACACAGACAGGATTTTTAAATGTAAATCTATTTTTGTAACTTTGTTGCGGGATATAGTTCTCTTTATGTAGCACTGAACTTTGTACAATATATTTTTAGAAACTCATTTTTCTACTAAAACAAACACAGTTTACTTTAGAGAGACTGCAATAGAATCAAAATTTGAAACTGAAATCTTTGTTTAAAAGGGTTAAGTTGAGGCAAGAGGAAAGCCCTTTCTCTCTCTTATAAAAAGGCACAACCTCATTGGGGAGCTAAGCTAGGTCATTGTCATGGTGAAGAAGAGAAGCATCGTTTTTATATTTAGGAAATTTTAAAAGATGATGGAAAGCACATTTAGCTTGGTCTGAGGCAGGTTCTGTTGGGGCAGTGTTAATGGAAAGGGCTCACTGTTGTTACTACTAGAAAAATCCAGTTGCATGCCATACTCTCATCATCTGCCAGTGTAACCCTGTACATGTAAGAAAAGCAATAACATAGCACTTTGTTGGTTTATATATATAATGTGACTTCAATGCAAATTTTATTTTTATATTTACAATTGATATGCATTTACCAGTATAAACTAGACATGTCTGGAGAGCCTAATAATGTTCAGCACACTTTGGTTAGTTCACCAACAGTCTTACCAAGCCTGGGCCCAGCCACCCTAGAGAAGTTATTCAGCCCTGGCTGCAGTGACATCACCTGAGGAGCTTTTAAAAGCTTGAAGCCCAGCTACACCTCAGACCGATTAAACGCAAATCTCTGGGGCTGAAACCCAAGCATTCGTAGTTTTTAAAGCTCCTGAGGTCATTCCAATGTGCGGCCAAAGTTGAGAACTACTGGCCTAGGGATTAGCCACAAGGACATGGACTTGGAGGCAAATTCTGCAGGTGTATGTGATTCTCAGGCCTAGAGAGCTAAGACACAAAGACCTCCACATCTGTCGCTGAGAGTCAAGAACCTGAACAGAGTTTCCATGAAGGTTCTCCAAGCACTAGAAGGGAGAGTGTCTAAACAATGGTTGAAAAGCAAAGGAAATATAAAACAGACACCTCTTTCCATTTCCTAAGGTTTCTCTCTTTATTAAGGGTGGACTAGTAATAAAATATAATATTCTTGCTGCTTATGCAGCTGACATTGTTGCCCTCCCTAAAGCAACCAAGTAGCCTTTATTTCCCACAGTGAAAGAAAACGCTGGCCTATCAGTTACATTACAAAAGGCAGATTTCAAGAGGATTGAGTAAGTAGTTGGATGGCTTTCATAAAAACAAGAATTCAAGAAGAGGATTCATGCTTTAAGAAACATTTGTTATACATTCCTCACAAATTATACCTGGGATAAAAACTATGTAGCAGGCAGTGTGTTTTCCTTCCATGTCTCTCTGCACTACCTGCAGTGTGTCCTCTGAGGCTGCAAGTCTGTCCTATCTGAATTCCCAGCAGAAGCACTAAGAAGCTCCACCCTATCACCTAGCAGATAAAACTATGGGGAAAACTTAAATCTGTGCATACATTTCTGGATGCATTTACTTATCTTTAAAAAAAAAGGAATCCTATGACCTGATTTGGCCACAAAAATAATCTTGCTGTACAATACAATCTCTTGGAAATTAAGAGATCCTATGGATTTGATGACTGGTATTAGAGGTGACAATGTAACCGATTAACAACAGACAGCAATAACTTCGTTTTAGAAACATTCAAGCAATAGCTTTATAGCTTCAACATATGGTACGTTTTAACCTTGAAAGTTTTGCAATGATGAAAGCAGTATTTGTACAAATGAAAAGCAGAATTCTCTTTTATATGGTTTATACTGTTGATCAGAAATGTTGATTGTGCATTGAGTATTAAAAAATTAGATGTATATTATTCATTGTTCTTTACTCCTGAGTACCTTATAATAATAATAATGTATTCTTTGTTAACAA
 
 orf=
-ATGCCTCCACGACCATCATCAGGTGAACTGTGGGGCATCCACTTGATGCCCCCAAGAATCCTAGTAGAATGTTTACTACCAAATGGAATGATAGTGACTTTAGAATGCCTCCGTGAGGCTACATTAATAACCATAAAGCATGAACTATTTAAAGAAGCAAGAAAATACCCCCTCCATCAACTTCTTCAAGATGAATCTTCTTACATTTTCGTAAGTGTTACTCAAGAAGCAGAAAGGGAAGAATTTTTTGATGAAACAAGACGACTTTGTGACCTTCGGCTTTTTCAACCCTTTTTAAAAGTAATTGAACCAGTAGGCAACCGTGAAGAAAAGATCCTCAATCGAGAAATTGGTTTTGCTATCGGCATGCCAGTGTGTGAATTTGATATGGTTAAAGATCCAGAAGTACAGGACTTCCGAAGAAATATTCTGAACGTTTGTAAAGAAGCTGTGGATCTTAGGGACCTCAATTCACCTCATAGTAGAGCAATGTATGTCTATCCTCCAAATGTAGAATCTTCACCAGAATTGCCAAAGCACATATATAATAAATTAGATAAAGGGCAAATAATAGTGGTGATCTGGGTAATAGTTTCTCCAAATAATGACAAGCAGAAGTATACTCTGAAAATCAACCATGACTGTGTACCAGAACAAGTAATTGCTGAAGCAATCAGGAAAAAAACTCGAAGTATGTTGCTATCCTCTGAACAACTAAAACTCTGTGTTTTAGAATATCAGGGCAAGTATATTTTAAAAGTGTGTGGATGTGATGAATACTTCCTAGAAAAATATCCTCTGAGTCAGTATAAGTATATAAGAAGCTGTATAATGCTTGGGAGGATGCCCAATTTGATGTTGATGGCTAAAGAAAGCCTTTATTCTCAACTGCCAATGGACTGTTTTACAATGCCATCTTATTCCAGACGCATTTCCACAGCTACACCATATATGAATGGAGAAACATCTACAAAATCCCTTTGGGTTATAAATAGTGCACTCAGAATAAAAATTCTTTGTGCAACCTACGTGAATGTAAATATTCGAGACATTGATAAGATCTATGTTCGAACAGGTATCTACCATGGAGGAGAACCCTTATGTGACAATGTGAACACTCAAAGAGTACCTTGTTCCAATCCCAGGTGGAATGAATGGCTGAATTATGATATATACATTCCTGATCTTCCTCGTGCTGCTCGACTTTGCCTTTCCATTTGCTCTGTTAAAGGCCGAAAGGGTGCTAAAGAGGAACACTGTCCATTGGCATGGGGAAATATAAACTTGTTTGATTACACAGACACTCTAGTATCTGGAAAAATGGCTTTGAATCTTTGGCCAGTACCTCATGGATTAGAAGATTTGCTGAACCCTATTGGTGTTACTGGATCAAATCCAAATAAAGAAACTCCATGCTTAGAGTTGGAGTTTGACTGGTTCAGCAGTGTGGTAAAGTTCCCAGATATGTCAGTGATTGAAGAGCATGCCAATTGGTCTGTATCCCGAGAAGCAGGATTTAGCTATTCCCACGCAGGACTGAGTAACAGACTAGCTAGAGACAATGAATTAAGGGAAAATGACAAAGAACAGCTCAAAGCAATTTCTACACGAGATCCTCTCTCTGAAATCACTGAGCAGGAGAAAGATTTTCTATGGAGTCACAGACACTATTGTGTAACTATCCCCGAAATTCTACCCAAATTGCTTCTGTCTGTTAAATGGAATTCTAGAGATGAAGTAGCCCAGATGTATTGCTTGGTAAAAGATTGGCCTCCAATCAAACCTGAACAGGCTATGGAACTTCTGGACTGTAATTACCCAGATCCTATGGTTCGAGGTTTTGCTGTTCGGTGCTTGGAAAAATATTTAACAGATGACAAACTTTCTCAGTATTTAATTCAGCTAGTACAGGTCCTAAAATATGAACAATATTTGGATAACTTGCTTGTGAGATTTTTACTGAAGAAAGCATTGACTAATCAAAGGATTGGGCACTTTTTCTTTTGGCATTTAAAATCTGAGATGCACAATAAAACAGTTAGCCAGAGGTTTGGCCTGCTTTTGGAGTCCTATTGTCGTGCATGTGGGATGTATTTGAAGCACCTGAATAGGCAAGTCGAGGCAATGGAAAAGCTCATTAACTTAACTGACATTCTCAAACAGGAGAAGAAGGATGAAACACAAAAGGTACAGATGAAGTTTTTAGTTGAGCAAATGAGGCGACCAGATTTCATGGATGCTCTACAGGGCTTTCTGTCTCCTCTAAACCCTGCTCATCAACTAGGAAACCTCAGGCTTGAAGAGTGTCGAATTATGTCCTCTGCAAAAAGGCCACTGTGGTTGAATTGGGAGAACCCAGACATCATGTCAGAGTTACTGTTTCAGAACAATGAGATCATCTTTAAAAATGGGGATGATTTACGGCAAGATATGCTAACACTTCAAATTATTCGTATTATGGAAAATATCTGGCAAAATCAAGGTCTTGATCTTCGAATGTTACCTTATGGTTGTCTGTCAATCGGTGACTGTGTGGGACTTATTGAGGTGGTGCGAAATTCTCACACTATTATGCAAATTCAGTGCAAAGGCGGCTTGAAAGGTGCACTGCAGTTCAACAGCCACACACTACATCAGTGGCTCAAAGACAAGAACAAAGGAGAAATATATGATGCAGCCATTGACCTGTTTACACGTTCATGTGCTGGATACTGTGTAGCTACCTTCATTTTGGGAATTGGAGATCGTCACAATAGTAACATCATGGTGAAAGACGATGGACAACTGTTTCATATAGATTTTGGACACTTTTTGGATCACAAGAAGAAAAAATTTGGTTATAAACGAGAACGTGTGCCATTTGTTTTGACACAGGATTTCTTAATAGTGATTAGTAAAGGAGCCCAAGAATGCACAAAGACAAGAGAATTTGAGAGGTTTCAGGAGATGTGTTACAAGGCTTATCTAGCTATTCGACAGCATGCCAATCTCTTCATAAATCTTTTCTCAATGATGCTTGGCTCTGGAATGCCAGAACTACAATCTTTTGATGACATTGCATACATTCGAAAGACCCTAGCCTTAGATAAAACTGAGCAAGAGGCTTTGGAGTATTTCATGAAACAAATGAATGATGCACATCATGGTGGCTGGACAACAAAAATGGATTGGATCTTCCACACAATTAAACAGCATGCATTGAACTGA
+ATGCGACCCTCCGGGACGGCCGGGGCAGCGCTCCTGGCGCTGCTGGCTGCGCTCTGCCCGGCGAGTCGGGCTCTGGAGGAAAAGAAAGTTTGCCAAGGCACGAGTAACAAGCTCACGCAGTTGGGCACTTTTGAAGATCATTTTCTCAGCCTCCAGAGGATGTTCAATAACTGTGAGGTGGTCCTTGGGAATTTGGAAATTACCTATGTGCAGAGGAATTATGATCTTTCCTTCTTAAAGACCATCCAGGAGGTGGCTGGTTATGTCCTCATTGCCCTCAACACAGTGGAGCGAATTCCTTTGGAAAACCTGCAGATCATCAGAGGAAATATGTACTACGAAAATTCCTATGCCTTAGCAGTCTTATCTAACTATGATGCAAATAAAACCGGACTGAAGGAGCTGCCCATGAGAAATTTACAGGAAATCCTGCATGGCGCCGTGCGGTTCAGCAACAACCCTGCCCTGTGCAACGTGGAGAGCATCCAGTGGCGGGACATAGTCAGCAGTGACTTTCTCAGCAACATGTCGATGGACTTCCAGAACCACCTGGGCAGCTGCCAAAAGTGTGATCCAAGCTGTCCCAATGGGAGCTGCTGGGGTGCAGGAGAGGAGAACTGCCAGAAACTGACCAAAATCATCTGTGCCCAGCAGTGCTCCGGGCGCTGCCGTGGCAAGTCCCCCAGTGACTGCTGCCACAACCAGTGTGCTGCAGGCTGCACAGGCCCCCGGGAGAGCGACTGCCTGGTCTGCCGCAAATTCCGAGACGAAGCCACGTGCAAGGACACCTGCCCCCCACTCATGCTCTACAACCCCACCACGTACCAGATGGATGTGAACCCCGAGGGCAAATACAGCTTTGGTGCCACCTGCGTGAAGAAGTGTCCCCGTAATTATGTGGTGACAGATCACGGCTCGTGCGTCCGAGCCTGTGGGGCCGACAGCTATGAGATGGAGGAAGACGGCGTCCGCAAGTGTAAGAAGTGCGAAGGGCCTTGCCGCAAAGTGTGTAACGGAATAGGTATTGGTGAATTTAAAGACTCACTCTCCATAAATGCTACGAATATTAAACACTTCAAAAACTGCACCTCCATCAGTGGCGATCTCCACATCCTGCCGGTGGCATTTAGGGGTGACTCCTTCACACATACTCCTCCTCTGGATCCACAGGAACTGGATATTCTGAAAACCGTAAAGGAAATCACAGGGTTTTTGCTGATTCAGGCTTGGCCTGAAAACAGGACGGACCTCCATGCCTTTGAGAACCTAGAAATCATACGCGGCAGGACCAAGCAACATGGTCAGTTTTCTCTTGCAGTCGTCAGCCTGAACATAACATCCTTGGGATTACGCTCCCTCAAGGAGATAAGTGATGGAGATGTGATAATTTCAGGAAACAAAAATTTGTGCTATGCAAATACAATAAACTGGAAAAAACTGTTTGGGACCTCCGGTCAGAAAACCAAAATTATAAGCAACAGAGGTGAAAACAGCTGCAAGGCCACAGGCCAGGTCTGCCATGCCTTGTGCTCCCCCGAGGGCTGCTGGGGCCCGGAGCCCAGGGACTGCGTCTCTTGCCGGAATGTCAGCCGAGGCAGGGAATGCGTGGACAAGTGCAACCTTCTGGAGGGTGAGCCAAGGGAGTTTGTGGAGAACTCTGAGTGCATACAGTGCCACCCAGAGTGCCTGCCTCAGGCCATGAACATCACCTGCACAGGACGGGGACCAGACAACTGTATCCAGTGTGCCCACTACATTGACGGCCCCCACTGCGTCAAGACCTGCCCGGCAGGAGTCATGGGAGAAAACAACACCCTGGTCTGGAAGTACGCAGACGCCGGCCATGTGTGCCACCTGTGCCATCCAAACTGCACCTACGGATGCACTGGGCCAGGTCTTGAAGGCTGTCCAACGAATGGGCCTAAGATCCCGTCCATCGCCACTGGGATGGTGGGGGCCCTCCTCTTGCTGCTGGTGGTGGCCCTGGGGATCGGCCTCTTCATGCGAAGGCGCCACATCGTTCGGAAGCGCACGCTGCGGAGGCTGCTGCAGGAGAGGGAGCTTGTGGAGCCTCTTACACCCAGTGGAGAAGCTCCCAACCAAGCTCTCTTGAGGATCTTGAAGGAAACTGAATTCAAAAAGATCAAAGTGCTGGGCTCCGGTGCGTTCGGCACGGTGTATAAGGGACTCTGGATCCCAGAAGGTGAGAAAGTTAAAATTCCCGTCGCTATCAAGGAATTAAGAGAAGCAACATCTCCGAAAGCCAACAAGGAAATCCTCGATGAAGCCTACGTGATGGCCAGCGTGGACAACCCCCACGTGTGCCGCCTGCTGGGCATCTGCCTCACCTCCACCGTGCAGCTCATCACGCAGCTCATGCCCTTCGGCTGCCTCCTGGACTATGTCCGGGAACACAAAGACAATATTGGCTCCCAGTACCTGCTCAACTGGTGTGTGCAGATCGCAAAGGGCATGAACTACTTGGAGGACCGTCGCTTGGTGCACCGCGACCTGGCAGCCAGGAACGTACTGGTGAAAACACCGCAGCATGTCAAGATCACAGATTTTGGGCTGGCCAAACTGCTGGGTGCGGAAGAGAAAGAATACCATGCAGAAGGAGGCAAAGTGCCTATCAAGTGGATGGCATTGGAATCAATTTTACACAGAATCTATACCCACCAGAGTGATGTCTGGAGCTACGGGGTGACTGTTTGGGAGTTGATGACCTTTGGATCCAAGCCATATGACGGAATCCCTGCCAGCGAGATCTCCTCCATCCTGGAGAAAGGAGAACGCCTCCCTCAGCCACCCATATGTACCATCGATGTCTACATGATCATGGTCAAGTGCTGGATGATAGACGCAGATAGTCGCCCAAAGTTCCGTGAGTTGATCATCGAATTCTCCAAAATGGCCCGAGACCCCCAGCGCTACCTTGTCATTCAGGGGGATGAAAGAATGCATTTGCCAAGTCCTACAGACTCCAACTTCTACCGTGCCCTGATGGATGAAGAAGACATGGACGACGTGGTGGATGCCGACGAGTACCTCATCCCACAGCAGGGCTTCTTCAGCAGCCCCTCCACGTCACGGACTCCCCTCCTGAGCTCTCTGAGTGCAACCAGCAACAATTCCACCGTGGCTTGCATTGATAGAAATGGGCTGCAAAGCTGTCCCATCAAGGAAGACAGCTTCTTGCAGCGATACAGCTCAGACCCCACAGGCGCCTTGACTGAGGACAGCATAGACGACACCTTCCTCCCAGTGCCTGAATACATAAACCAGTCCGTTCCCAAAAGGCCCGCTGGCTCTGTGCAGAATCCTGTCTATCACAATCAGCCTCTGAACCCCGCGCCCAGCAGAGACCCACACTACCAGGACCCCCACAGCACTGCAGTGGGCAACCCCGAGTATCTCAACACTGTCCAGCCCACCTGTGTCAACAGCACATTCGACAGCCCTGCCCACTGGGCCCAGAAAGGCAGCCACCAAATTAGCCTGGACAACCCTGACTACCAGCAGGACTTCTTTCCCAAGGAAGCCAAGCCAAATGGCATCTTTAAGGGCTCCACAGCTGAAAATGCAGAATACCTAAGGGTCGCGCCACAAAGCAGTGAATTTATTGGAGCATGA
 
 AA=
-MPPRPSSGELWGIHLMPPRILVECLLPNGMIVTLECLREATLITIKHELFKEARKYPLHQLLQDESSYIFVSVTQEAEREEFFDETRRLCDLRLFQPFLKVIEPVGNREEKILNREIGFAIGMPVCEFDMVKDPEVQDFRRNILNVCKEAVDLRDLNSPHSRAMYVYPPNVESSPELPKHIYNKLDKGQIIVVIWVIVSPNNDKQKYTLKINHDCVPEQVIAEAIRKKTRSMLLSSEQLKLCVLEYQGKYILKVCGCDEYFLEKYPLSQYKYIRSCIMLGRMPNLMLMAKESLYSQLPMDCFTMPSYSRRISTATPYMNGETSTKSLWVINSALRIKILCATYVNVNIRDIDKIYVRTGIYHGGEPLCDNVNTQRVPCSNPRWNEWLNYDIYIPDLPRAARLCLSICSVKGRKGAKEEHCPLAWGNINLFDYTDTLVSGKMALNLWPVPHGLEDLLNPIGVTGSNPNKETPCLELEFDWFSSVVKFPDMSVIEEHANWSVSREAGFSYSHAGLSNRLARDNELRENDKEQLKAISTRDPLSEITEQEKDFLWSHRHYCVTIPEILPKLLLSVKWNSRDEVAQMYCLVKDWPPIKPEQAMELLDCNYPDPMVRGFAVRCLEKYLTDDKLSQYLIQLVQVLKYEQYLDNLLVRFLLKKALTNQRIGHFFFWHLKSEMHNKTVSQRFGLLLESYCRACGMYLKHLNRQVEAMEKLINLTDILKQEKKDETQKVQMKFLVEQMRRPDFMDALQGFLSPLNPAHQLGNLRLEECRIMSSAKRPLWLNWENPDIMSELLFQNNEIIFKNGDDLRQDMLTLQIIRIMENIWQNQGLDLRMLPYGCLSIGDCVGLIEVVRNSHTIMQIQCKGGLKGALQFNSHTLHQWLKDKNKGEIYDAAIDLFTRSCAGYCVATFILGIGDRHNSNIMVKDDGQLFHIDFGHFLDHKKKKFGYKRERVPFVLTQDFLIVISKGAQECTKTREFERFQEMCYKAYLAIRQHANLFINLFSMMLGSGMPELQSFDDIAYIRKTLALDKTEQEALEYFMKQMNDAHHGGWTTKMDWIFHTIKQHALN
+MRPSGTAGAALLALLAALCPASRALEEKKVCQGTSNKLTQLGTFEDHFLSLQRMFNNCEVVLGNLEITYVQRNYDLSFLKTIQEVAGYVLIALNTVERIPLENLQIIRGNMYYENSYALAVLSNYDANKTGLKELPMRNLQEILHGAVRFSNNPALCNVESIQWRDIVSSDFLSNMSMDFQNHLGSCQKCDPSCPNGSCWGAGEENCQKLTKIICAQQCSGRCRGKSPSDCCHNQCAAGCTGPRESDCLVCRKFRDEATCKDTCPPLMLYNPTTYQMDVNPEGKYSFGATCVKKCPRNYVVTDHGSCVRACGADSYEMEEDGVRKCKKCEGPCRKVCNGIGIGEFKDSLSINATNIKHFKNCTSISGDLHILPVAFRGDSFTHTPPLDPQELDILKTVKEITGFLLIQAWPENRTDLHAFENLEIIRGRTKQHGQFSLAVVSLNITSLGLRSLKEISDGDVIISGNKNLCYANTINWKKLFGTSGQKTKIISNRGENSCKATGQVCHALCSPEGCWGPEPRDCVSCRNVSRGRECVDKCNLLEGEPREFVENSECIQCHPECLPQAMNITCTGRGPDNCIQCAHYIDGPHCVKTCPAGVMGENNTLVWKYADAGHVCHLCHPNCTYGCTGPGLEGCPTNGPKIPSIATGMVGALLLLLVVALGIGLFMRRRHIVRKRTLRRLLQERELVEPLTPSGEAPNQALLRILKETEFKKIKVLGSGAFGTVYKGLWIPEGEKVKIPVAIKELREATSPKANKEILDEAYVMASVDNPHVCRLLGICLTSTVQLITQLMPFGCLLDYVREHKDNIGSQYLLNWCVQIAKGMNYLEDRRLVHRDLAARNVLVKTPQHVKITDFGLAKLLGAEEKEYHAEGGKVPIKWMALESILHRIYTHQSDVWSYGVTVWELMTFGSKPYDGIPASEISSILEKGERLPQPPICTIDVYMIMVKCWMIDADSRPKFRELIIEFSKMARDPQRYLVIQGDERMHLPSPTDSNFYRALMDEEDMDDVVDADEYLIPQQGFFSSPSTSRTPLLSSLSATSNNSTVACIDRNGLQSCPIKEDSFLQRYSSDPTGALTEDSIDDTFLPVPEYINQSVPKRPAGSVQNPVYHNQPLNPAPSRDPHYQDPHSTAVGNPEYLNTVQPTCVNSTFDSPAHWAQKGSHQISLDNPDYQQDFFPKEAKPNGIFKGSTAENAEYLRVAPQSSEFIGA
 
 utr5=
-AGTTCCGGTGCCGCCGCTGCGGCCGCTGAGGTGTCGGGCTGCTGCTGCCGCGGCCGCTGGGACTGGGGCTGGGGCCGCCGGCGAGGCAGGGCTCGGGCCCGGCCGGGCAGCTCCGGAGCGGCGGGGGAGAGGGGCCGGGAGGCGGGGGCCGTGCCGCCCGCTCTCCTCTCCCTCGGCGCCGCCGCCGCCGCCCGCGGGGCTGGGACCCGATGCGGTTAGAGCCGCGGAGCCTGGAAGAGCCCCGAGCGTTTCTGCTTTGGGACAACCATACATCTAATTCCTTAAAGTAGTTTTATATGTAAAACTTGCAAAGAATCAGAACA
+AGACGTCCGGGCAGCCCCCGGCGCAGCGCGGCCGCAGCAGCCTCCGCCCCCCGCACGGTGTGAGCGCCCGACGCGGCCGAGGCGGCCGGAGTCCCGAGCTAGCCCCGGCGGCCGCCGCCGCCCAGACCGGACGACAGGCCACCTCGTCGGCGTCCGCCCGAGTCCCCGCCTCGCCGCCAACGCCACAACCACCGCGCACGGCCCCCTGACTCCGTCCAGTATTGATCGGGAGAGCCGGAGCGAGCTCTTCGGGGAGCAGCG
 
 utr3=
-AAAGATAACTGAGAAAATGAAAGCTCACTCTGGATTCCACACTGCACTGTTAATAACTCTCAGCAGGCAAAGACCGATTGCATAGGAATTGCACAATCCATGAACAGCATTAGAATTTACAGCAAGAACAGAAATAAAATACTATATAATTTAAATAATGTAAACGCAAACAGGGTTTGATAGCACTTAAACTAGTTCATTTCAAAATTAAGCTTTAGAATAATGCGCAATTTCATGTTATGCCTTAAGTCCAAAAAGGTAAACTTTGAAGATTGTTTGTATCTTTTTTTAAAAAACAAAACAAAACAAAAATCCCCAAAATATATAGAAATGATGGAGAAGGAAAAAGTGATGGTTTTTTTTGTCTTGCAAATGTTCTATGTTTTGAAATGTGGACACAACAAAGGCTGTTATTGCATTAGGTGTAAGTAAACTGGAGTTTATGTTAAATTACATTGATTGGAAAAGAATGAAAATTTCTTATTTTTCCATTGCTGTTCAATTTATAGTTTGAAGTGGGTTTTTGACTGCTTGTTTAATGAAGAAAAATGCTTGGGGTGGAAGGGACTCTTGAGATTTCACCAGAGACTTTTTCTTTTTAATAAATCAAACCTTTTGATGATTTGAGGTTTTATCTGCAGTTTTGGAAGCAGTCACAAATGAGACCTGTTATAAGGTGGTATTTTTTTTTTTCTTCTGGACAGTATTTAAAGGATCTTATTCTTATTTCCCAGGGAAATTCTGGGCTCCCACAAAGTAAAAAAAAAAAAAAATCATAGAAAAAGAATGAGCAGGAATAGTTCTTATTCCAGAATTGTACAGTATTCACCTTAAGTTGATTTTTTTTCTCCTTCTGCAATTGAACTGAATACATTTTTCATGCATGTTTTCCAGAAAATAGAAGTATTAATGTTATTAAAAAGATTATTTTTTTTATTAAAGGCTATTTATATTATAGAAACTATCATTAATATATATTCTTTATTTACATGATCTGTCCCATAGTCATGCATTGTTTTGCACCCCAAATTTTTTATTGTTCATAGCAGCATGGTCAGCTTTCTTCTTGATCTATAGATGAGGCTCAGGCACTATCCCATTTATACCAATAACCAGTGTATAACTACTTAAGGAAAACATAAAAACTTCATCTTCTTTCCTTTTATTTCTTATGTGAATCTCCCGTCTTCCATTCTCTTTTATAATTGAGAATGTCTCAATCATATGAAATTAGTTACCAGAATTAACACAATTTAGACTATCTTCCTGATTCCTTAAACCCCTTTACTGAAGTATACTCATGAATAATACTTTAAAATATGGGGGAATAGAAACCATGAACTTTTTACCTTTTTAAACTATTTATCCATATCTCCAAAGTAGAACATTAAACCATTTTAAGATATGTCTCATTCCCAAGTAGTCAGAGCTCACTCTCCAACTTTATTAAATACTATTTGAGCACAGGACACATTCTTAAACATTTTGAAAAACATTAACCCAAGATGTAGAGGCTACTGCTAGTCGTCATTCTAGAATCTGATATTTTACTCTGTATTTGAAATGAATGATTAATGTCCTAGGAAATTAGCTTTAGCAGATGTCCAGGTGCCACATCAAAAAAGTGCAATAATTATTGACAGTTTTTTAGATTAGGCATATTATTGGAAAACAACTTTATAAAGAGTGAACATTGTATACTCTAGTAAAACAGCATCACTTTAAAAATATTCATTTATGAAATCTGTTACCTATAGTTGAAGTCTTGAGTAGTGAACAAGGGACTCTAATACCAATACTCTTAATATCTGGCTATTTTAGATCCCTTAAAGGGCATAATTATTGGAAATTTAGGTATTTCACTAAAGCATGTATATAATATTGCCAACAAGAAAAGTAAATTTGAAGATTAAGGGAACTTACTTCTGCAAACTGTCTTGCGATAGTTAAGCAGAATTTAAACTCTGTTTTAAGCAGGAAACCAGAAAGATTATTTTGCAGTTGTAGAAGATTTCATAACTTATTAAAACTTATTAACATTTTGTGTTGTTTAGATATAGGCAGTTGATACATACTAACATCCCAGCCTTTTCAATATCAGGGTTAAATTATAGGAAAACTCAGTAAAATGGTACAAATCTGAAAGTTTGATGGTAGAAACTGAAGATTTAACAGAGAACTGTGTTTTACCCGAGTGCCAAAAATGCTGTGAGCCTCCTTGCACAAAATTTATACCACTTTTGCATTTTTATCTATCAGTCCAGATAGTTGTCTCCCCTCCTTCTCCCAGGACCTCTCCACCATTAAAATGCACAAACCACATGGCCGATTTCACCATTTACATTTATTTTCAAAAGTTACTACAACCAAATTAATTCTATTAGAAGAAATGTAGACAAATTCTATAAAGACTATAGATTGTGACCTAAGAAAGAAATGAGGCAAAGAACCAAACATTGAATTAAATGCTACATGGGTGACTAAGATCTGTTTCAAGTCAGTGATAATATAGCCACTTCTGGGTACTTCAGTATCAGAGATCAGTTCTCGTGGTTTAGACAGTTCCTATCTATAGCTGACTATCCTTGTCCTTGAATATGGTGTAACTGACTATTGGCTCTACAGTTTTATTGGGCCACTTAAGAAATATTTCCTTGAATAATTATTTTGAGAAAAAGTCTAAAAGTAATAAAAATAATTTTAAACACACTGTAGTAAGAAATGACTGTTGGAAAATTATGCTTTCACTTTCTACCATATTCTCAGCTATACAAAACCATTTATTTTGAAGATTTTTAGACTACTGTTAATTTGAAATCTGTTACTCTTATTGTGGAATTTGTTTTTTTAAAAAAGATGTTTCTAATTGGATTTTTAAAAGAAGAATGGAATTTGGTTGCTATTTTACAATAGAACCTAAGCTTTTTGTGGTTCTTAGTGTCCTATGTAAAACTTAGTGTCAAAGTAATCAACTTTGAGATTTTCCCTTCTATTCTGCTTTATATTAAAAGCCCATTAGAAAATGGGAACCTGGTGAATATATAATGAATTGTAAAATATTTTAATGTGTAACTTTTTCAACTGTGAAACTGACTTGATTTTTTGATGAAAACAGCTGCTGATAAAGTATTTTGTGTAAAGTGTAGTTCTTATTAATCAGGAAAATGATGACTTGATTAGACTGTATATGCCCTCTTGGATTTTATTTTAAATGGATTGGTGACTTTCACATAGGTAAAACACAGTCCATCTGTATTCTTTTTTCCATCAAAAATCGAGTGATTTGGAATTATAAAAAAATTGTGAGCAGCCTATTTGAAAGGCATCATGGAAATTTCACAGCACAATAACACGGATTTGTTTTTTCTTAATGATGTAAATCCGTTTAATTCATACTTTGATCAATAGCCCATGCTTGCCAACTCTGAAGAAATTTAATTTCCAGCAGTATTTTAAAGCTAGCCTGTTAACTTTTTCTGAATATTTAAAGTTCCTCTTTTTTCTATGTCTGCACAAACTGCAGACCTGGGCTGGACCCACATACTCAAGAGTCCACCTTAAGAAATTATTTTGATGTCCAAGACATCACTAAAATATTTAAGTTTAAAGATAATATGTGGTGTTAATAGATTGTGGTGCTTTTACTATTTAAAGACAACTTTCATACTTCAGATGTTTTTGAGAAGAGGGGAATGTGAGGGGAGGGGGCAGAACAGGGAGGAGTTGTTTGAATGAATTACATTCTTTATATCCATCCTGCTCATTTGGGGCATGTCTTTAAGAGAAGGCTGAAAGTTGTGAGAGTATATTGTATACCGTAAGAGAATCAACTCTTCATCATGGATGGGATTGTGAAGGCTGAACTATAAAATTCAGCATTGACAGCATCCTCAATTAATAATTCTTGGTGACAGAATAATACAGCTGGGCTGTTTTTTAAAATATAAACAATACCATTTTTAATTATTACATTAAAAATTGTAAATATATCTATGTGCCATGGCCTGGGAAGCCTGCTTTCTTTTTTCATAAAAATTATTTTTACTGTATGAAAAGATCATGGGGTTTAGCTCAAAATATCTGTGGTCCTGATAAAATTGGATTGGTAACTCTACCTCAGAAGGAAAATGGGAAAAAAAAATAGATGAGTCACAATTCAATACTTCAAGCTCAGAAACTGTGCAGATCACTGAATTTTAGATTTATAAAGTCAGAGTTGGCATGCCTTGTTTTTAATGATATGGAAGACCTTAAGAAAAAAACTTGGCTGAAGTTTAATCGTTGGTCCAGCCATTTGAAAAAGGCAATAGTTTGAGGAGGTTCCCGAATTCGGCATTTGAAATTCATTTTGTTCTCTCTTCTTCATTATTAGTGCATTTGGTGTGTGTATACTTGCACACAATTCTGTTTGTGTACACACTGCTTGCTTAGCCCTAGTCAAGAGGCATCTTTTATAAAAGGTGTAAAGAAATATCAAGGTTCTAAAATTCGGAAGAGTTTAGAATTTATTAGGAGTTTCCCAAGTTGGGATGTTAGTCTTTAAATAAACTTCATGCACCTATTCCACTTAAGGTTTTGCACCTCCTTTTTATTAGTGCAGTGCCATTTCTTCTGCTTGATTTTAGGTATGTTAATATTCCAGCCTTGCTAGTTAGCATAAAGTGACAGGTGTGAGCCATGAGGAAATTTTCTGACTTAATTTGTACACAACTACATATAAGAGTTTTAGTGGAGGAAAAAAATTAGTCCCTTGTGCGTATACAGTAGTTAGGTAAATGATTTTTCTACCAACAGTATACTCCATTCCTCATGTAGGTAAGTACAGAAAAGGTTTTTAAATGTATTTTTTTAGCCAGTTAAAGTCTATGAATCTATCTGCAACCTTATTTAATCTGTCACTATAATAATTTTGTGGTTATGCTAAGAACCATGTATACTTTTAGGTATTCTTATTTTTGTCAATTTTTCTAGGTTGGCAAGGAGGCAGAAAACCTTCATTGTTTCATATTAAAATATAATTAGACTAAACTTAATTCTAGTATGAATTTCCAAAATCATTATCTATTTATTTCATTTTTATTTAATTTTGTTTTTATTTCATTTTTAAAAGTCCCTTGTTCAATTTAACTTATGTTCCTAAGAGAGGTTGGAGAACTTGGCCTTCATCTGATTTCAAAAATGTTTTGAGTTTCAAATGAAGTTAATGGTTTCAGTGTGATTCAGTCCTCAGACCTAATTGGGTTGAATAAAATCTAAAAGAATATACCCTTTTGGAGCATAACATTTTAATACCTTGGGGAATGTGGCACTACCAAAAGAAGACTACTAACACGTCAGATGTTCACCTGGAAGCTTTATCAAGAAATTCGAACCACCCTTTTGGCCCCATTAATTGTAGCAAGTTTATTTCTCTATATTTTGTCATTCAGTGAATTGAAGTCCTGTGGTATACTGCATTCATTAGAAGAAAAACGTTTTTAATGTCCTTTTAATGATGGCCCAGAAAGCATTTGACACAGCAAGATGCATGTGTTACTATATTGAGAATATAGAATAATAACAGTATCACTAAATTTAAGACCTCTTCCCAGTCTTGCTGTTCCTAGCAAGAAGTTTGGCCTGTGACTGCACTTACTGTTTATGCTCATCAGAAACTGTCAATGTCTGCTTTTCTTTAACTCTGCAGTCTGTAACATCACGCTGTTTATTAAAAAAAAAAAGAAAAATTA
+CCACGGAGGATAGTATGAGCCCTAAAAATCCAGACTCTTTCGATACCCAGGACCAAGCCACAGCAGGTCCTCCATCCCAACAGCCATGCCCGCATTAGCTCTTAGACCCACAGACTGGTTTTGCAACGTTTACACCGACTAGCCAGGAAGTACTTCCACCTCGGGCACATTTTGGGAAGTTGCATTCCTTTGTCTTCAAACTGTGAAGCATTTACAGAAACGCATCCAGCAAGAATATTGTCCCTTTGAGCAGAAATTTATCTTTCAAAGAGGTATATTTGAAAAAAAAAAAAAGTATATGTGAGGATTTTTATTGATTGGGGATCTTGGAGTTTTTCATTGTCGCTATTGATTTTTACTTCAATGGGCTCTTCCAACAAGGAAGAAGCTTGCTGGTAGCACTTGCTACCCTGAGTTCATCCAGGCCCAACTGTGAGCAAGGAGCACAAGCCACAAGTCTTCCAGAGGATGCTTGATTCCAGTGGTTCTGCTTCAAGGCTTCCACTGCAAAACACTAAAGATCCAAGAAGGCCTTCATGGCCCCAGCAGGCCGGATCGGTACTGTATCAAGTCATGGCAGGTACAGTAGGATAAGCCACTCTGTCCCTTCCTGGGCAAAGAAGAAACGGAGGGGATGGAATTCTTCCTTAGACTTACTTTTGTAAAAATGTCCCCACGGTACTTACTCCCCACTGATGGACCAGTGGTTTCCAGTCATGAGCGTTAGACTGACTTGTTTGTCTTCCATTCCATTGTTTTGAAACTCAGTATGCTGCCCCTGTCTTGCTGTCATGAAATCAGCAAGAGAGGATGACACATCAAATAATAACTCGGATTCCAGCCCACATTGGATTCATCAGCATTTGGACCAATAGCCCACAGCTGAGAATGTGGAATACCTAAGGATAGCACCGCTTTTGTTCTCGCAAAAACGTATCTCCTAATTTGAGGCTCAGATGAAATGCATCAGGTCCTTTGGGGCATAGATCAGAAGACTACAAAAATGAAGCTGCTCTGAAATCTCCTTTAGCCATCACCCCAACCCCCCAAAATTAGTTTGTGTTACTTATGGAAGATAGTTTTCTCCTTTTACTTCACTTCAAAAGCTTTTTACTCAAAGAGTATATGTTCCCTCCAGGTCAGCTGCCCCCAAACCCCCTCCTTACGCTTTGTCACACAAAAAGTGTCTCTGCCTTGAGTCATCTATTCAAGCACTTACAGCTCTGGCCACAACAGGGCATTTTACAGGTGCGAATGACAGTAGCATTATGAGTAGTGTGGAATTCAGGTAGTAAATATGAAACTAGGGTTTGAAATTGATAATGCTTTCACAACATTTGCAGATGTTTTAGAAGGAAAAAAGTTCCTTCCTAAAATAATTTCTCTACAATTGGAAGATTGGAAGATTCAGCTAGTTAGGAGCCCACCTTTTTTCCTAATCTGTGTGTGCCCTGTAACCTGACTGGTTAACAGCAGTCCTTTGTAAACAGTGTTTTAAACTCTCCTAGTCAATATCCACCCCATCCAATTTATCAAGGAAGAAATGGTTCAGAAAATATTTTCAGCCTACAGTTATGTTCAGTCACACACACATACAAAATGTTCCTTTTGCTTTTAAAGTAATTTTTGACTCCCAGATCAGTCAGAGCCCCTACAGCATTGTTAAGAAAGTATTTGATTTTTGTCTCAATGAAAATAAAACTATATTCATTTCCACTCTATTATGCTCTCAAATACCCCTAAGCATCTATACTAGCCTGGTATGGGTATGAAAGATACAAAGATAAATAAAACATAGTCCCTGATTCTAAGAAATTCACAATTTAGCAAAGGAAATGGACTCATAGATGCTAACCTTAAAACAACGTGACAAATGCCAGACAGGACCCATCAGCCAGGCACTGTGAGAGCACAGAGCAGGGAGGTTGGGTCCTGCCTGAGGAGACCTGGAAGGGAGGCCTCACAGGAGGATGACCAGGTCTCAGTCAGCGGGGAGGTGGAAAGTGCAGGTGCATCAGGGGCACCCTGACCGAGGAAACAGCTGCCAGAGGCCTCCACTGCTAAAGTCCACATAAGGCTGAGGTCAGTCACCCTAAACAACCTGCTCCCTCTAAGCCAGGGGATGAGCTTGGAGCATCCCACAAGTTCCCTAAAAGTTGCAGCCCCCAGGGGGATTTTGAGCTATCATCTCTGCACATGCTTAGTGAGAAGACTACACAACATTTCTAAGAATCTGAGATTTTATATTGTCAGTTAACCACTTTCATTATTCATTCACCTCAGGACATGCAGAAATATTTCAGTCAGAACTGGGAAACAGAAGGACCTACATTCTGCTGTCACTTATGTGTCAAGAAGCAGATGATCGATGAGGCAGGTCAGTTGTAAGTGAGTCACATTGTAGCATTAAATTCTAGTATTTTTGTAGTTTGAAACAGTAACTTAATAAAAGAGCAAAAGCTATTCTAGCTTTCTTCTTCATATTTTAATTTTCCACCATAAAGTTTAGTTGCTAAATTCTATTAATTTTAAGATTGTGCTTCCCAAAATAGTTCTCACTTCATCTGTCCAGGGAGGCACAGTTCTGTCTGGTAGAAGCCGCAAAGCCCTTAGCCTCTTCACGGATCTGGCGACTGTGATGGGCAGGTCAGGAGAGGAGCTGCCCAAAGTCCCATGATTTTCACCTAACAGCCCTGATCAGTCAGTACTCAAAGCTTGGACTCCATCCCTGAAGGTCTTCCTGATTGATAGCCTGGCCTTAATACCCTACAGAAAGCCTGTCCATTGGCTGTTTCTTCCTCAGTCAGTTCCTGGAAGACCTTACCCCATGACCCCAGCTTCAGATGTGGTCTTTGGAAACAGAGGTCGAAGGAAAGTAAGGAGCTGAGAGCTCACATTCATAGGTGCCGCCAGCCTTCGTGCATCTTCTTGCATCATCTCTAAGGAGCTCCTCTAATTACACCATGCCCGTCACCCCATGAGGGATCAGAGAAGGGATGAGTCTTCTAAACTCTATATTCGCTGTGAGTCCAGGTTGTAAGGGGGAGCACTGTGGATGCATCCTATTGCACTCCAGCTGATGACACCAAAGCTTAGGTGTTTGCTGAAAGTTCTTGATGTTGTGACTTACCACCCCTGCCTCACAACTGCAGACATAAGGGGACTATGGATTGCTTAGCAGGAAAGGCACTGGTTCTCAAGGGCGGCTGCCCTTGGGAATCTTCTGGTCCCAACCAGAAAGACTGTGGCTTGATTTTCTCAGGTGCAGCCCAGCCGTAGGGCCTTTTCAGAGCACCCCCTGGTTATTGCAACATTCATCAAAGTTTCTAGAACCTCTGGCCTAAAGGAAGGGCCTGGTGGGATCTACTTGGCACTCGCTGGGGGGCCACCCCCCAGTGCCACTCTCACTAGGCCTCTGATTGCACTTGTGTAGGATGAAGCTGGTGGGTGATGGGAACTCAGCACCTCCCCTCAGGCAGAAAAGAATCATCTGTGGAGCTTCAAAAGAAGGGGCCTGGAGTCTCTGCAGACCAATTCAACCCAAATCTCGGGGGCTCTTTCATGATTCTAATGGGCAACCAGGGTTGAAACCCTTATTTCTAGGGTCTTCAGTTGTACAAGACTGTGGGTCTGTACCAGAGCCCCCGTCAGAGTAGAATAAAAGGCTGGGTAGGGTAGAGATTCCCATGTGCAGTGGAGAGAACAATCTGCAGTCACTGATAAGCCTGAGACTTGGCTCATTTCAAAAGCGTTCAATTCATCCTCACCAGCAGTTCAGCTGGAAAGGGGCAAATACCCCCACCTGAGCTTTGAAAACGCCCTGGGACCCTCTGCATTCTCTAAGTAAGTTATAGAAACCAGTCTCTTCCCTCCTTTGTGAGTGAGCTGCTATTCCACGTAGGCAACACCTGTTGAAATTGCCCTCAATGTCTACTCTGCATTTCTTTCTTGTGATAAGCACACACTTTTATTGCAACATAATGATCTGCTCACATTTCCTTGCCTGGGGGCTGTAAAACCTTACAGAACAGAAATCCTTGCCTCTTTCACCAGCCACACCTGCCATACCAGGGGTACAGCTTTGTACTATTGAAGACACAGACAGGATTTTTAAATGTAAATCTATTTTTGTAACTTTGTTGCGGGATATAGTTCTCTTTATGTAGCACTGAACTTTGTACAATATATTTTTAGAAACTCATTTTTCTACTAAAACAAACACAGTTTACTTTAGAGAGACTGCAATAGAATCAAAATTTGAAACTGAAATCTTTGTTTAAAAGGGTTAAGTTGAGGCAAGAGGAAAGCCCTTTCTCTCTCTTATAAAAAGGCACAACCTCATTGGGGAGCTAAGCTAGGTCATTGTCATGGTGAAGAAGAGAAGCATCGTTTTTATATTTAGGAAATTTTAAAAGATGATGGAAAGCACATTTAGCTTGGTCTGAGGCAGGTTCTGTTGGGGCAGTGTTAATGGAAAGGGCTCACTGTTGTTACTACTAGAAAAATCCAGTTGCATGCCATACTCTCATCATCTGCCAGTGTAACCCTGTACATGTAAGAAAAGCAATAACATAGCACTTTGTTGGTTTATATATATAATGTGACTTCAATGCAAATTTTATTTTTATATTTACAATTGATATGCATTTACCAGTATAAACTAGACATGTCTGGAGAGCCTAATAATGTTCAGCACACTTTGGTTAGTTCACCAACAGTCTTACCAAGCCTGGGCCCAGCCACCCTAGAGAAGTTATTCAGCCCTGGCTGCAGTGACATCACCTGAGGAGCTTTTAAAAGCTTGAAGCCCAGCTACACCTCAGACCGATTAAACGCAAATCTCTGGGGCTGAAACCCAAGCATTCGTAGTTTTTAAAGCTCCTGAGGTCATTCCAATGTGCGGCCAAAGTTGAGAACTACTGGCCTAGGGATTAGCCACAAGGACATGGACTTGGAGGCAAATTCTGCAGGTGTATGTGATTCTCAGGCCTAGAGAGCTAAGACACAAAGACCTCCACATCTGTCGCTGAGAGTCAAGAACCTGAACAGAGTTTCCATGAAGGTTCTCCAAGCACTAGAAGGGAGAGTGTCTAAACAATGGTTGAAAAGCAAAGGAAATATAAAACAGACACCTCTTTCCATTTCCTAAGGTTTCTCTCTTTATTAAGGGTGGACTAGTAATAAAATATAATATTCTTGCTGCTTATGCAGCTGACATTGTTGCCCTCCCTAAAGCAACCAAGTAGCCTTTATTTCCCACAGTGAAAGAAAACGCTGGCCTATCAGTTACATTACAAAAGGCAGATTTCAAGAGGATTGAGTAAGTAGTTGGATGGCTTTCATAAAAACAAGAATTCAAGAAGAGGATTCATGCTTTAAGAAACATTTGTTATACATTCCTCACAAATTATACCTGGGATAAAAACTATGTAGCAGGCAGTGTGTTTTCCTTCCATGTCTCTCTGCACTACCTGCAGTGTGTCCTCTGAGGCTGCAAGTCTGTCCTATCTGAATTCCCAGCAGAAGCACTAAGAAGCTCCACCCTATCACCTAGCAGATAAAACTATGGGGAAAACTTAAATCTGTGCATACATTTCTGGATGCATTTACTTATCTTTAAAAAAAAAGGAATCCTATGACCTGATTTGGCCACAAAAATAATCTTGCTGTACAATACAATCTCTTGGAAATTAAGAGATCCTATGGATTTGATGACTGGTATTAGAGGTGACAATGTAACCGATTAACAACAGACAGCAATAACTTCGTTTTAGAAACATTCAAGCAATAGCTTTATAGCTTCAACATATGGTACGTTTTAACCTTGAAAGTTTTGCAATGATGAAAGCAGTATTTGTACAAATGAAAAGCAGAATTCTCTTTTATATGGTTTATACTGTTGATCAGAAATGTTGATTGTGCATTGAGTATTAAAAAATTAGATGTATATTATTCATTGTTCTTTACTCCTGAGTACCTTATAATAATAATAATGTATTCTTTGTTAACAA
 </pre>
 </div>
 </div>
@@ -15634,7 +15806,7 @@ AAAGATAACTGAGAAAATGAAAGCTCACTCTGGATTCCACACTGCACTGTTAATAACTCTCAGCAGGCAAAGACCGATTG
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;A sequence of a specific Exon or Intron&quot;&quot;&quot;</span>
@@ -15666,12 +15838,12 @@ AAAGATAACTGAGAAAATGAAAGCTCACTCTGGATTCCACACTGCACTGTTAATAACTCTCAGCAGGCAAAGACCGATTG
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Exon_5 sequence (Exon_5:chr3:179203544:179203789):
-TATATAAGAAGCTGTATAATGCTTGGGAGGATGCCCAATTTGATGTTGATGGCTAAAGAAAGCCTTTATTCTCAACTGCCAATGGACTGTTTTACAATGCCATCTTATTCCAGACGCATTTCCACAGCTACACCATATATGAATGGAGAAACATCTACAAAATCCCTTTGGGTTATAAATAGTGCACTCAGAATAAAAATTCTTTGTGCAACCTACGTGAATGTAAATATTCGAGACATTGATAAG
-246 bps.
-Intron_5 sequence (Intron_5:chr3:179203790:179204502):
-GTAAAGTCAAATGCTGATGCTTATTATTTTATAGAAATTATTTTAGATAACCTTTTTCTTGCACTATACAGTAATCTGTTGACCTGTAGTATGTTTTCAGATGGTTAGGAGAACATCCAAATCTCCGAATGTAAAAATATATCAAGAATTTTACTTGAGCTTCCATCTACCTTAGCTATTATACAGCTCACAGTCCTTTGTTAATAATTCTAATATTCACAATTCTAGCTCTTAAAATCAAAAGTTTTACAGAATTCGTTTGGCAGAAAGACCTGGGCCAACCTTAAGTGAGGGTTTTTATAATCTTTATTAACCCCACTTAGTATAAAATTCCGGTATCTTATTAAAGAAATATTAATGTCTTTATGAGGTACTGCTTCACCAGCTAAGGAAGTAGTATTTAGTAAGTACGTGTACCAATTTAGCTTTCTAAAATATGGAAAAACTCTGAATTACATACCTCCCTTAAGGGGATTGTGGGCCTATATTTATGTTTTAGTAGTCTGATGTCTCCATTGTTATTAGTGGATGAAGGCAGCAACTAATTTTGGTGAAGACTCTACATCAGTATTAACGTGTTACATATGTGAAAAAAAGGAGAACCAAGCTATATCTGAACAAAAATTCCGTGGTTTTATATTTGAGTCTATCGAGTGTGTGCATATGTGTATGTTGAGTGTATACATTAGTATATACCTACTTTTTTCTTTTAG
-713 bps.
+<pre>Exon_5 sequence (Exon_5:chr7:55151294:55151362):
+GCCAAAAGTGTGATCCAAGCTGTCCCAATGGGAGCTGCTGGGGTGCAGGAGAGGAGAACTGCCAGAAAC
+69 bps.
+Intron_5 sequence (Intron_5:chr7:55151363:55152545):
+GTAAGTCAGTGAACAGCCTCAGACCCATGTGTGACCGCCCCTCTCTTCCTTCACTTGCTTAGGTGATTGGATTTGTTTTCCCTCTGAAGACTCCAAAGAGTTACTTTATTACAGGGTCAGATGTGAACCAGTAGGTGAAGGACAGTCTTGCAAATCTCACCGCATGCAGTTAATCCAGGGTGGGCTATTTTGGGAGCTTCAGCCTATCACAAATAAGTGAACATCAGCAGGGGCTGGGCGCGGTGGCTCACCCCTATAATCCCAGCACTTTGGGAGGCGGAGGCGGTCGGATCACGAGGTCAGGAGATCGAGCCATTCTGGTTAACACAGTGAAACCTCGTCTCTACTAAAAATACAAAAAATTAGCCGGGCGTGGTGGCGGGCGCCTGTAGTCCCAGCTACTCGGGAGGCTGAGGCAGGAGAATGGCATGAACCTGGGAGGCGGAGCTTGCAGTGAGCCGAGATTGTGCCACTGCATTCCAGCCTGGGCGACAGAGCGAGACTCCGTCTCAAAACAACAACAACAACAACAACAACAATAAGTGAACATCAGCAAGTACCCCAGCCCTGTCCTCTGAACACAGCACACTTTCCCAGGAATGGAAGACTTGCTCCTGTTGACAGCAGTCACCAGACTTCTTGTTTCCTCTCCCTCCCTGGCTTTCTTTGGTACCCACCTACACAGAAGCCTGAGCACGGGTTCTCATGGGGACTTTTCCATGTGGACCCTGCTTTACGATGGAGAGGGCCATTCTCCTAGGTATGGTTGTCTGGCTCAGCCTCTCAGTGGCCAAGGAACCTGGGGACATGAGCTCAAAAACGGACACTATGTCCTTAAGCTGAATTGTGGGGGGGCTGTTAGGCCCTTCTAAACACTACTTCCCAGCAGGTATTTTTGTTCTTTGTATGTGCTTTCTGCATTGCCCAAGATGCATCTAATTATTTAGCAGGTCTCAAAGTCTAGACTTGATCTCATGAGTTCTCTTAAGTGATTAAAAATAAATCAGGAGAAAAAAGAGGCAATCAGAAAAGGGCATGGTTTGACTTAGTTTGAATGTGGTTTCGTTGGAAGCAAATGTGTCTTCACTTTTTCATGAAAAAGTCTGCAAGTGCTCTGCGACATCCCTGGGAAATGATCCTACCCTCACTCTTCAGCTCACAGGGAACCTTTGCTCTTTTTCAG
+1183 bps.
 </pre>
 </div>
 </div>
@@ -15685,7 +15857,7 @@ GTAAAGTCAAATGCTGATGCTTATTATTTTATAGAAATTATTTTAGATAACCTTTTTCTTGCACTATACAGTAATCTGTT
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Optional: compare AA sequence with Ensembl REST API</span>
@@ -15737,7 +15909,7 @@ GTAAAGTCAAATGCTGATGCTTATTATTTTATAGAAATTATTTTAGATAACCTTTTTCTTGCACTATACAGTAATCTGTT
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -15745,9 +15917,9 @@ GTAAAGTCAAATGCTGATGCTTATTATTTTATAGAAATTATTTTAGATAACCTTTTTCTTGCACTATACAGTAATCTGTT
 
 <span class="sd">Query a chromosome position.</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="c1">#chrm_pos = 55_157_663  # query a chromosome position</span>
+<span class="n">chrm_pos</span> <span class="o">=</span> <span class="mi">55_157_663</span>  <span class="c1"># query a chromosome position</span>
 <span class="c1">#chrm_pos = 208_243_604-10 # query a chromosome position</span>
-<span class="n">chrm_pos</span> <span class="o">=</span> <span class="mi">179_148_357</span><span class="o">+</span><span class="mi">800</span> <span class="c1"># query a chromosome position</span>
+<span class="c1">#chrm_pos = 179_148_357+800 # query a chromosome position</span>
 <span class="c1"># -----------------------------------------------------</span>
 <span class="n">chrm_info</span> <span class="o">=</span> <span class="n">gene_obj</span><span class="o">.</span><span class="n">chrm_pos_info</span><span class="p">(</span><span class="n">transcript_id</span><span class="p">,</span> <span class="n">chrm_pos</span><span class="p">,</span> <span class="n">chrm_path</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">chrm_info</span><span class="p">)</span>
@@ -15770,7 +15942,7 @@ GTAAAGTCAAATGCTGATGCTTATTATTTTATAGAAATTATTTTAGATAACCTTTTTCTTGCACTATACAGTAATCTGTT
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>{&#39;region&#39;: &#39;Intron_1&#39;, &#39;region_pos&#39;: 554, &#39;bp&#39;: &#39;C&#39;}
+<pre>{&#39;region&#39;: &#39;Exon_11&#39;, &#39;region_pos&#39;: 1, &#39;segment&#39;: &#39;ORF&#39;, &#39;pos_in_segment&#39;: 1208, &#39;NT&#39;: &#39;G&#39;, &#39;codon_number&#39;: 403, &#39;nt_in_codon&#39;: 2, &#39;codon&#39;: &#39;GGG&#39;, &#39;aa&#39;: &#39;G&#39;}
 </pre>
 </div>
 </div>
@@ -15784,15 +15956,15 @@ GTAAAGTCAAATGCTGATGCTTATTATTTTATAGAAATTATTTTAGATAACCTTTTTCTTGCACTATACAGTAATCTGTT
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">Chromosome position to RNA position</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="c1">#chrm_pos = 55_211_628  # for EGFR</span>
+<span class="n">chrm_pos</span> <span class="o">=</span> <span class="mi">55_211_628</span>  <span class="c1"># for EGFR</span>
 <span class="c1">#chrm_pos = 208_236_229  # for IDH1</span>
-<span class="n">chrm_pos</span> <span class="o">=</span> <span class="mi">179_199_690</span>  <span class="c1"># for PIK3CA</span>
+<span class="c1">#chrm_pos = 179_199_690  # for PIK3CA</span>
 <span class="c1"># -----------------------------------------</span>
 <span class="k">if</span> <span class="p">(</span><span class="n">rna_pos</span> <span class="o">:=</span> <span class="n">gene_obj</span><span class="o">.</span><span class="n">chrm_pos2rna_pos</span><span class="p">(</span><span class="n">transcript_id</span><span class="p">,</span> <span class="n">chrm_pos</span><span class="p">))</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">chrm_pos</span><span class="si">=:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> is outside of the RNA (outside of </span><span class="si">{</span><span class="n">transcript_id</span><span class="si">}</span><span class="s2"> exons)&quot;</span><span class="p">)</span>
@@ -15817,7 +15989,7 @@ GTAAAGTCAAATGCTGATGCTTATTATTTTATAGAAATTATTTTAGATAACCTTTTTCTTGCACTATACAGTAATCTGTT
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>chrm_pos=179,199,690 --&gt; rna_pos=676
+<pre>chrm_pos=55,211,628 --&gt; rna_pos=9,905
 </pre>
 </div>
 </div>
@@ -15831,7 +16003,7 @@ GTAAAGTCAAATGCTGATGCTTATTATTTTATAGAAATTATTTTAGATAACCTTTTTCTTGCACTATACAGTAATCTGTT
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[30]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
@@ -15861,7 +16033,7 @@ GTAAAGTCAAATGCTGATGCTTATTATTTTATAGAAATTATTTTAGATAACCTTTTTCTTGCACTATACAGTAATCTGTT
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>{&#39;segment&#39;: &#39;ORF&#39;, &#39;pos_in_segment&#39;: 1192, &#39;NT&#39;: &#39;C&#39;, &#39;codon_number&#39;: 398, &#39;nt_in_codon&#39;: 1, &#39;codon&#39;: &#39;CGT&#39;, &#39;aa&#39;: &#39;R&#39;}
+<pre>{&#39;segment&#39;: &#39;ORF&#39;, &#39;pos_in_segment&#39;: 794, &#39;NT&#39;: &#39;C&#39;, &#39;codon_number&#39;: 265, &#39;nt_in_codon&#39;: 2, &#39;codon&#39;: &#39;CCC&#39;, &#39;aa&#39;: &#39;P&#39;}
 </pre>
 </div>
 </div>
@@ -15875,7 +16047,7 @@ GTAAAGTCAAATGCTGATGCTTATTATTTTATAGAAATTATTTTAGATAACCTTTTTCTTGCACTATACAGTAATCTGTT
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[31]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
@@ -15910,7 +16082,7 @@ GTAAAGTCAAATGCTGATGCTTATTATTTTATAGAAATTATTTTAGATAACCTTTTTCTTGCACTATACAGTAATCTGTT
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>{&#39;codon&#39;: &#39;GCA&#39;, &#39;AA&#39;: &#39;A&#39;, &#39;codon_exon_pos&#39;: [&#39;Exon_3:135&#39;, &#39;Exon_3:136&#39;, &#39;Exon_3:137&#39;], &#39;codon_chromosome_pos&#39;: [179199824, 179199825, 179199826]}
+<pre>{&#39;codon&#39;: &#39;CAG&#39;, &#39;AA&#39;: &#39;Q&#39;, &#39;codon_exon_pos&#39;: [&#39;Exon_4:63&#39;, &#39;Exon_4:64&#39;, &#39;Exon_4:65&#39;], &#39;codon_chromosome_pos&#39;: [55146668, 55146669, 55146670]}
 </pre>
 </div>
 </div>
@@ -15924,15 +16096,15 @@ GTAAAGTCAAATGCTGATGCTTATTATTTTATAGAAATTATTTTAGATAACCTTTTTCTTGCACTATACAGTAATCTGTT
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[33]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">Converts a DNA mutation to the corresponding AA mutation.</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="c1">#mut_id = &#39;EGFR:chr7:Missense_Mutation:55152609:G:C&#39;</span>
+<span class="n">mut_id</span> <span class="o">=</span> <span class="s1">&#39;EGFR:chr7:Missense_Mutation:55152609:G:C&#39;</span>
 <span class="c1">#mut_id = &#39;IDH1:chr2:Missense_Mutation:208248455:C:T&#39;</span>
-<span class="n">mut_id</span> <span class="o">=</span> <span class="s1">&#39;PIK3CA:chr3:Missense_Mutation:179218306:C:A&#39;</span> <span class="c1">#&#39;PIK3CA:chr3:Missense_Mutation:179234297:A:G&#39;</span>
+<span class="c1">#mut_id = &#39;PIK3CA:chr3:Missense_Mutation:179218306:C:A&#39; #&#39;PIK3CA:chr3:Missense_Mutation:179234297:A:G&#39;</span>
 
 <span class="n">mut_id_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Gene_name&#39;</span><span class="p">,</span> <span class="s1">&#39;Chromosome&#39;</span><span class="p">,</span> <span class="s1">&#39;Variant_Classification&#39;</span><span class="p">,</span> 
                <span class="s1">&#39;Start_Position&#39;</span><span class="p">,</span> <span class="s1">&#39;Reference_Allele&#39;</span><span class="p">,</span> <span class="s1">&#39;Tumor_Seq_Allele2&#39;</span><span class="p">]</span>
@@ -15963,7 +16135,7 @@ GTAAAGTCAAATGCTGATGCTTATTATTTTATAGAAATTATTTTAGATAACCTTTTTCTTGCACTATACAGTAATCTGTT
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>mut_id=&#39;PIK3CA:chr3:Missense_Mutation:179218306:C:A&#39; --&gt; aa_mut=&#39;Q546K&#39;
+<pre>mut_id=&#39;EGFR:chr7:Missense_Mutation:55152609:G:C&#39; --&gt; aa_mut=&#39;C231S&#39;
 </pre>
 </div>
 </div>
@@ -15977,7 +16149,7 @@ GTAAAGTCAAATGCTGATGCTTATTATTTTATAGAAATTATTTTAGATAACCTTTTTCTTGCACTATACAGTAATCTGTT
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[34]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -16004,8 +16176,8 @@ GTAAAGTCAAATGCTGATGCTTATTATTTTATAGAAATTATTTTAGATAACCTTTTTCTTGCACTATACAGTAATCTGTT
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>aa_mut=&#39;Q546K&#39; corresponds to:
-{&#39;AAA&#39;: {&#39;start_pos&#39;: 179218306, &#39;reference_allele&#39;: &#39;CAG&#39;, &#39;alternative_allele&#39;: &#39;AAA&#39;}, &#39;AAG&#39;: {&#39;start_pos&#39;: 179218306, &#39;reference_allele&#39;: &#39;C&#39;, &#39;alternative_allele&#39;: &#39;A&#39;}}.
+<pre>aa_mut=&#39;C231S&#39; corresponds to:
+{&#39;TCT&#39;: {&#39;start_pos&#39;: 55152609, &#39;reference_allele&#39;: &#39;GC&#39;, &#39;alternative_allele&#39;: &#39;CT&#39;}, &#39;TCC&#39;: {&#39;start_pos&#39;: 55152609, &#39;reference_allele&#39;: &#39;G&#39;, &#39;alternative_allele&#39;: &#39;C&#39;}, &#39;TCA&#39;: {&#39;start_pos&#39;: 55152609, &#39;reference_allele&#39;: &#39;GC&#39;, &#39;alternative_allele&#39;: &#39;CA&#39;}, &#39;TCG&#39;: {&#39;start_pos&#39;: 55152609, &#39;reference_allele&#39;: &#39;GC&#39;, &#39;alternative_allele&#39;: &#39;CG&#39;}, &#39;AGT&#39;: {&#39;start_pos&#39;: 55152608, &#39;reference_allele&#39;: &#39;TGC&#39;, &#39;alternative_allele&#39;: &#39;AGT&#39;}, &#39;AGC&#39;: {&#39;start_pos&#39;: 55152608, &#39;reference_allele&#39;: &#39;T&#39;, &#39;alternative_allele&#39;: &#39;A&#39;}}.
 </pre>
 </div>
 </div>
@@ -16021,9 +16193,9 @@ GTAAAGTCAAATGCTGATGCTTATTATTTTATAGAAATTATTTTAGATAACCTTTTTCTTGCACTATACAGTAATCTGTT
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Example---Specifying-GFF3-file-or-a-Corresponding-DataFrame">Example - Specifying GFF3 file or a Corresponding DataFrame<a class="anchor-link" href="#Example---Specifying-GFF3-file-or-a-Corresponding-DataFrame">&#182;</a></h1><p>The <code>Gene_cls</code> loads internally the latest GFF3 file into a dataframe. This load takes few seconds to cpmplete. 
+<h1 id="Example---Specifying-GFF3-file-or-a-Corresponding-DataFrame">Example - Specifying GFF3 file or a Corresponding DataFrame<a class="anchor-link" href="#Example---Specifying-GFF3-file-or-a-Corresponding-DataFrame">&#182;</a></h1><p>The <code>Gene_cls</code> loads internally the latest GFF3 file into a dataframe. This load takes few seconds to complete. 
 It is possible to specify a GFF3 file, or instead to provide a dataframe of the GFF3 file, when instatntiating the annotation class.</p>
-<p>For example, in cases where annotation is needed for several genes, it is more efficient to load the GFF3 file into a dataframe once, and then instantiate multiple annotation classes with the dataframe.</p>
+<p>For example, in cases where annotation is needed for multiple genes, it is more efficient to load the GFF3 file into a dataframe once, and then instantiate multiple annotation classes with the dataframe. Below are some examples.</p>
 
 </div>
 </div>
@@ -16033,7 +16205,7 @@ It is possible to specify a GFF3 file, or instead to provide a dataframe of the 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># loading GFF3 file into a dataframe</span>
@@ -16050,7 +16222,7 @@ It is possible to specify a GFF3 file, or instead to provide a dataframe of the 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># now instantiating using the dataframe (much faster)</span>
@@ -16078,14 +16250,14 @@ It is possible to specify a GFF3 file, or instead to provide a dataframe of the 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>Gene name=EGFR, Gene ID=ENSG00000146648
-Source=Input DataFrame (ID=12364455696, size=(3414011, 9)).
+Source=Input DataFrame (ID=6105268176, size=(3414011, 9)).
 Positive strand=True.
 Type=protein_coding, version=21.
 Description=epidermal growth factor receptor [Source:HGNC Symbol%3BAcc:HGNC:3236]
 Gene region=chr7:55,019,017-55,211,628.
 11 transcripts.
 Gene name=BRCA1, Gene ID=ENSG00000012048
-Source=Input DataFrame (ID=12364455696, size=(3414011, 9)).
+Source=Input DataFrame (ID=6105268176, size=(3414011, 9)).
 Positive strand=False.
 Type=protein_coding, version=24.
 Description=BRCA1 DNA repair associated [Source:HGNC Symbol%3BAcc:HGNC:1100]
@@ -16104,12 +16276,13 @@ Gene region=chr17:43,044,295-43,170,245.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># another example is to instatntiate by specifying your GFF3 file</span>
-<span class="n">mygff3_file</span><span class="p">:</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span> <span class="o">=</span> <span class="n">gaut</span><span class="o">.</span><span class="n">GFF3_file</span>  <span class="c1"># specify here your Ensembl GFF3 file</span>
-<span class="c1"># -------------------------------------------------------------------------------</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># another example is to instantiate by specifying your GFF3 file</span>
+<span class="c1">#mygff3_file: pathlib.Path = gaut.GFF3_file  # specify here your Ensembl GFF3 file</span>
+<span class="n">mygff3_file</span><span class="p">:</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">si</span><span class="o">.</span><span class="n">ROOT_path</span><span class="p">)</span> <span class="o">/</span> <span class="s1">&#39;Data&#39;</span> <span class="o">/</span> <span class="s1">&#39;Ensembl_gene_annotation&#39;</span> <span class="o">/</span> <span class="s1">&#39;Homo_sapiens.GRCh38.108.gff3&#39;</span>
+<span class="c1"># --------------------------------------------------------------------------------------------------------------------------</span>
 <span class="n">g_af</span> <span class="o">=</span> <span class="n">gaut</span><span class="o">.</span><span class="n">Gene_gff3_cls</span><span class="p">(</span><span class="s1">&#39;EGFR&#39;</span><span class="p">,</span> <span class="n">mygff3_file</span><span class="p">)</span>
 <span class="n">g_af</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
@@ -16131,9 +16304,9 @@ Gene region=chr17:43,044,295-43,170,245.
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Loading /Users/yoramzarai/work/mystuff/Ramot/Projects/Cancer_mut/Data/Ensembl_gene_annotation/Homo_sapiens.GRCh38.109.gff3 to a dataframe...Done.
+<pre>Loading /Users/yoramzarai/work/mystuff/Ramot/Projects/Cancer_mut/Data/Ensembl_gene_annotation/Homo_sapiens.GRCh38.108.gff3 to a dataframe...Done.
 Gene name=EGFR, Gene ID=ENSG00000146648
-Source=/Users/yoramzarai/work/mystuff/Ramot/Projects/Cancer_mut/Data/Ensembl_gene_annotation/Homo_sapiens.GRCh38.109.gff3
+Source=/Users/yoramzarai/work/mystuff/Ramot/Projects/Cancer_mut/Data/Ensembl_gene_annotation/Homo_sapiens.GRCh38.108.gff3
 Positive strand=True.
 Type=protein_coding, version=21.
 Description=epidermal growth factor receptor [Source:HGNC Symbol%3BAcc:HGNC:3236]
@@ -16152,7 +16325,7 @@ Gene region=chr7:55,019,017-55,211,628.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># finally, you can load your GFF3 file into a dataframe, and instantiate with that dataframe</span>
@@ -16179,7 +16352,7 @@ Gene region=chr7:55,019,017-55,211,628.
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>Gene name=EGFR, Gene ID=ENSG00000146648
-Source=Input DataFrame (ID=13471703248, size=(3414011, 9)).
+Source=Input DataFrame (ID=13668566608, size=(3403477, 9)).
 Positive strand=True.
 Type=protein_coding, version=21.
 Description=epidermal growth factor receptor [Source:HGNC Symbol%3BAcc:HGNC:3236]
