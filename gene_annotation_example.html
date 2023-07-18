@@ -14690,7 +14690,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Loading /Users/yoramzarai/work/mystuff/Ramot/Projects/Cancer_mut/Data/Ensembl_gene_annotation/Homo_sapiens.GRCh38.109.gff3 to a dataframe...Done.
+<pre>Loading /Users/yoramzarai/work/mystuff/Ramot/Projects/Cancer_mut/Data/Ensembl_gene_annotation/Homo_sapiens.GRCh38.110.gff3.gz to a dataframe...Done.
 </pre>
 </div>
 </div>
@@ -14747,7 +14747,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <pre>
 gene=&#39;EGFR&#39; information:
 Gene name=EGFR, Gene ID=ENSG00000146648
-Source=/Users/yoramzarai/work/mystuff/Ramot/Projects/Cancer_mut/Data/Ensembl_gene_annotation/Homo_sapiens.GRCh38.109.gff3
+Source=/Users/yoramzarai/work/mystuff/Ramot/Projects/Cancer_mut/Data/Ensembl_gene_annotation/Homo_sapiens.GRCh38.110.gff3.gz
 Positive strand=True.
 Type=protein_coding, version=21.
 Description=epidermal growth factor receptor [Source:HGNC Symbol%3BAcc:HGNC:3236]
@@ -15713,7 +15713,7 @@ Exon map for transcript_id=&#39;ENST00000275493&#39;:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
@@ -15733,7 +15733,7 @@ Exon map for transcript_id=&#39;ENST00000275493&#39;:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -15741,22 +15741,22 @@ Exon map for transcript_id=&#39;ENST00000275493&#39;:
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="n">chrm_path</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">si</span><span class="o">.</span><span class="n">chromosome_path</span> <span class="o">/</span> <span class="n">si</span><span class="o">.</span><span class="n">get_chrm_file_name</span><span class="p">(</span><span class="n">gene_obj</span><span class="o">.</span><span class="n">chrm</span><span class="p">))</span>
 
-<span class="n">transcript_seq</span> <span class="o">=</span> <span class="n">gene_obj</span><span class="o">.</span><span class="n">seq</span><span class="p">(</span><span class="n">transcript_id</span><span class="p">,</span> <span class="n">chrm_path</span><span class="p">)</span>
+<span class="n">transcript_seq</span> <span class="o">=</span> <span class="n">gene_obj</span><span class="o">.</span><span class="n">seq</span><span class="p">(</span><span class="n">transcript_id</span><span class="p">,</span> <span class="n">chrm_path</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">transcript_id</span><span class="si">=}</span><span class="s2"> contains </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">transcript_seq</span><span class="p">)</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> bps.&quot;</span><span class="p">)</span>
 
-<span class="n">rna_seq</span> <span class="o">=</span> <span class="n">gene_obj</span><span class="o">.</span><span class="n">rna</span><span class="p">(</span><span class="n">transcript_id</span><span class="p">,</span> <span class="n">chrm_path</span><span class="p">)</span>
+<span class="n">rna_seq</span> <span class="o">=</span> <span class="n">gene_obj</span><span class="o">.</span><span class="n">rna</span><span class="p">(</span><span class="n">transcript_id</span><span class="p">,</span> <span class="n">chrm_path</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">rna=</span><span class="se">\n</span><span class="si">{</span><span class="n">rna_seq</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-<span class="n">orf_seq</span> <span class="o">=</span> <span class="n">gene_obj</span><span class="o">.</span><span class="n">ORF</span><span class="p">(</span><span class="n">transcript_id</span><span class="p">,</span> <span class="n">chrm_path</span><span class="p">)</span>
+<span class="n">orf_seq</span> <span class="o">=</span> <span class="n">gene_obj</span><span class="o">.</span><span class="n">ORF</span><span class="p">(</span><span class="n">transcript_id</span><span class="p">,</span> <span class="n">chrm_path</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">orf=</span><span class="se">\n</span><span class="si">{</span><span class="n">orf_seq</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="n">aa_seq</span> <span class="o">=</span> <span class="n">gene_obj</span><span class="o">.</span><span class="n">AA</span><span class="p">(</span><span class="n">transcript_id</span><span class="p">,</span> <span class="n">chrm_path</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">AA=</span><span class="se">\n</span><span class="si">{</span><span class="n">aa_seq</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-<span class="n">utr5_seq</span> <span class="o">=</span> <span class="n">gene_obj</span><span class="o">.</span><span class="n">UTR5</span><span class="p">(</span><span class="n">transcript_id</span><span class="p">,</span> <span class="n">chrm_path</span><span class="p">)</span>
+<span class="n">utr5_seq</span> <span class="o">=</span> <span class="n">gene_obj</span><span class="o">.</span><span class="n">UTR5</span><span class="p">(</span><span class="n">transcript_id</span><span class="p">,</span> <span class="n">chrm_path</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">utr5=</span><span class="se">\n</span><span class="si">{</span><span class="n">utr5_seq</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-<span class="n">utr3_seq</span> <span class="o">=</span> <span class="n">gene_obj</span><span class="o">.</span><span class="n">UTR3</span><span class="p">(</span><span class="n">transcript_id</span><span class="p">,</span> <span class="n">chrm_path</span><span class="p">)</span>
+<span class="n">utr3_seq</span> <span class="o">=</span> <span class="n">gene_obj</span><span class="o">.</span><span class="n">UTR3</span><span class="p">(</span><span class="n">transcript_id</span><span class="p">,</span> <span class="n">chrm_path</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">utr3=</span><span class="se">\n</span><span class="si">{</span><span class="n">utr3_seq</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 
@@ -15806,7 +15806,7 @@ CCACGGAGGATAGTATGAGCCCTAAAAATCCAGACTCTTTCGATACCCAGGACCAAGCCACAGCAGGTCCTCCATCCCAA
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;A sequence of a specific Exon or Intron&quot;&quot;&quot;</span>
@@ -15857,7 +15857,7 @@ GTAAGTCAGTGAACAGCCTCAGACCCATGTGTGACCGCCCCTCTCTTCCTTCACTTGCTTAGGTGATTGGATTTGTTTTC
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Optional: compare AA sequence with Ensembl REST API</span>
@@ -15909,7 +15909,7 @@ GTAAGTCAGTGAACAGCCTCAGACCCATGTGTGACCGCCCCTCTCTTCCTTCACTTGCTTAGGTGATTGGATTTGTTTTC
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -15956,7 +15956,7 @@ GTAAGTCAGTGAACAGCCTCAGACCCATGTGTGACCGCCCCTCTCTTCCTTCACTTGCTTAGGTGATTGGATTTGTTTTC
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -16003,7 +16003,7 @@ GTAAGTCAGTGAACAGCCTCAGACCCATGTGTGACCGCCCCTCTCTTCCTTCACTTGCTTAGGTGATTGGATTTGTTTTC
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
@@ -16047,7 +16047,7 @@ GTAAGTCAGTGAACAGCCTCAGACCCATGTGTGACCGCCCCTCTCTTCCTTCACTTGCTTAGGTGATTGGATTTGTTTTC
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
@@ -16096,7 +16096,7 @@ GTAAGTCAGTGAACAGCCTCAGACCCATGTGTGACCGCCCCTCTCTTCCTTCACTTGCTTAGGTGATTGGATTTGTTTTC
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -16149,7 +16149,7 @@ GTAAGTCAGTGAACAGCCTCAGACCCATGTGTGACCGCCCCTCTCTTCCTTCACTTGCTTAGGTGATTGGATTTGTTTTC
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -16205,7 +16205,7 @@ It is possible to specify a GFF3 file, or instead to provide a dataframe of the 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># loading GFF3 file into a dataframe</span>
@@ -16222,7 +16222,7 @@ It is possible to specify a GFF3 file, or instead to provide a dataframe of the 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># now instantiating using the dataframe (much faster)</span>
@@ -16250,19 +16250,19 @@ It is possible to specify a GFF3 file, or instead to provide a dataframe of the 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>Gene name=EGFR, Gene ID=ENSG00000146648
-Source=Input DataFrame (ID=6105268176, size=(3414011, 9)).
+Source=Input DataFrame (ID=10839561040, size=(3415686, 9)).
 Positive strand=True.
 Type=protein_coding, version=21.
 Description=epidermal growth factor receptor [Source:HGNC Symbol%3BAcc:HGNC:3236]
 Gene region=chr7:55,019,017-55,211,628.
 11 transcripts.
 Gene name=BRCA1, Gene ID=ENSG00000012048
-Source=Input DataFrame (ID=6105268176, size=(3414011, 9)).
+Source=Input DataFrame (ID=10839561040, size=(3415686, 9)).
 Positive strand=False.
-Type=protein_coding, version=24.
+Type=protein_coding, version=25.
 Description=BRCA1 DNA repair associated [Source:HGNC Symbol%3BAcc:HGNC:1100]
 Gene region=chr17:43,044,295-43,170,245.
-38 transcripts.
+37 transcripts.
 </pre>
 </div>
 </div>
@@ -16276,7 +16276,7 @@ Gene region=chr17:43,044,295-43,170,245.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># another example is to instantiate by specifying your GFF3 file</span>
@@ -16304,15 +16304,7 @@ Gene region=chr17:43,044,295-43,170,245.
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Loading /Users/yoramzarai/work/mystuff/Ramot/Projects/Cancer_mut/Data/Ensembl_gene_annotation/Homo_sapiens.GRCh38.108.gff3 to a dataframe...Done.
-Gene name=EGFR, Gene ID=ENSG00000146648
-Source=/Users/yoramzarai/work/mystuff/Ramot/Projects/Cancer_mut/Data/Ensembl_gene_annotation/Homo_sapiens.GRCh38.108.gff3
-Positive strand=True.
-Type=protein_coding, version=21.
-Description=epidermal growth factor receptor [Source:HGNC Symbol%3BAcc:HGNC:3236]
-Gene region=chr7:55,019,017-55,211,628.
-11 transcripts.
-</pre>
+<pre>Loading /Users/yoramzarai/work/mystuff/Ramot/Projects/Cancer_mut/Data/Ensembl_gene_annotation/Homo_sapiens.GRCh38.108.gff3 to a dataframe...</pre>
 </div>
 </div>
 
@@ -16320,12 +16312,12 @@ Gene region=chr7:55,019,017-55,211,628.
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># finally, you can load your GFF3 file into a dataframe, and instantiate with that dataframe</span>
@@ -16337,33 +16329,6 @@ Gene region=chr7:55,019,017-55,211,628.
      </div>
 </div>
 </div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Gene name=EGFR, Gene ID=ENSG00000146648
-Source=Input DataFrame (ID=13668566608, size=(3403477, 9)).
-Positive strand=True.
-Type=protein_coding, version=21.
-Description=epidermal growth factor receptor [Source:HGNC Symbol%3BAcc:HGNC:3236]
-Gene region=chr7:55,019,017-55,211,628.
-11 transcripts.
-</pre>
-</div>
-</div>
-
-</div>
-
 </div>
 
 </div>
