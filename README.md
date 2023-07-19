@@ -19,4 +19,3 @@ The main notebook is:
 Old Notebooks (not used any more):
 * `parse_gff3_file.ipynb` - parses the GFF3 Ensembl file and creates json file per gene.
 * `json_gene_annotation_example.ipynb` - example of using the `gene_anot_utils.py` util (in the `Utils/` folder) to annotate genes, based on the generated json files.
-
