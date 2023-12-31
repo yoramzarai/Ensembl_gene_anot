@@ -16,6 +16,11 @@ The main notebook is:
 - Update `chromosome_path` in `Utils/mys_init.py`. If needed, update also `get_chrm_file_name`
 - Add `chrm_size_<ver>` variable in `Utils/genetic_human_utils.py`
 
+
+Other files / Notebooks:
+* `verify_chrm_file_equal_chr_per_row.py` - verifies for each chromosome Fasta file, that all rows (other then the first and last row) have equal number of NTs.
+
+
 Old Notebooks (not used any more):
 * `parse_gff3_file.ipynb` - parses the GFF3 Ensembl file and creates json file per gene.
 * `json_gene_annotation_example.ipynb` - example of using the `gene_anot_utils.py` util (in the `Utils/` folder) to annotate genes, based on the generated json files.
