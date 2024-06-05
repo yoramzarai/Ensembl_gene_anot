@@ -7538,8 +7538,13 @@ a.anchor-link {
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="sd">'''</span>
 <span class="sd">Select a gene and a corresponding transcript.</span>
+
+<span class="sd">gene can be either a gene name (e.g. 'PIK3CA') or a gene ID (e.g. 'ENSG00000138641') </span>
 <span class="sd">'''</span>
+<span class="c1">#gene, transcript_id = 'FLT3', 'ENST00000241453'</span>
+
 <span class="n">gene</span><span class="p">,</span> <span class="n">transcript_id</span> <span class="o">=</span> <span class="s1">'EGFR'</span><span class="p">,</span> <span class="s1">'ENST00000275493'</span>
+<span class="c1">#gene, transcript_id = 'ENSG00000146648', 'ENST00000275493'</span>
 <span class="c1">#gene, transcript_id = 'IDH1', 'ENST00000345146'</span>
 <span class="c1">#gene, transcript_id = 'PIK3CA', 'ENST00000263967'</span>
 
@@ -7565,7 +7570,7 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Loading /Users/yoramzarai/work/mystuff/Ramot/Projects/Cancer_mut/Data/Ensembl_gene_annotation/Homo_sapiens.GRCh38.111.gff3.gz to a dataframe...Done.
+<pre>Loading /Users/yoramzarai/work/mystuff/Ramot/Projects/Cancer_mut/Data/Ensembl_gene_annotation/Homo_sapiens.GRCh38.112.gff3.gz to a dataframe...Done.
 </pre>
 </div>
 </div>
@@ -7611,15 +7616,15 @@ a.anchor-link {
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>
 gene='EGFR' information:
-Gene name=EGFR, Gene ID=ENSG00000146648
-Source=/Users/yoramzarai/work/mystuff/Ramot/Projects/Cancer_mut/Data/Ensembl_gene_annotation/Homo_sapiens.GRCh38.111.gff3.gz
+Gene=EGFR, Gene name=EGFR, Gene ID=ENSG00000146648
+Source=/Users/yoramzarai/work/mystuff/Ramot/Projects/Cancer_mut/Data/Ensembl_gene_annotation/Homo_sapiens.GRCh38.112.gff3.gz
 Positive strand=True.
 Type=protein_coding, version=21.
 Description=epidermal growth factor receptor [Source:HGNC Symbol%3BAcc:HGNC:3236]
 Gene region=chr7:55,019,017-55,211,628.
-11 transcripts.
+13 transcripts.
 
-EGFR contains 11 transcripts.
+EGFR contains 13 transcripts.
 EGFR transcript IDs:
 1. ENST00000344576
 2. ENST00000275493
@@ -7627,11 +7632,13 @@ EGFR transcript IDs:
 4. ENST00000342916
 5. ENST00000420316
 6. ENST00000700144
-7. ENST00000450046
-8. ENST00000700145
-9. ENST00000485503
-10. ENST00000700146
-11. ENST00000700147
+7. ENST00000459688
+8. ENST00000463948
+9. ENST00000450046
+10. ENST00000700145
+11. ENST00000485503
+12. ENST00000700146
+13. ENST00000700147
 
 Gene start = 55,019,017, gene end = 55,211,628
 
@@ -8534,7 +8541,7 @@ Exon map for transcript_id='ENST00000275493':
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="sd">'''</span>
@@ -8553,7 +8560,7 @@ Exon map for transcript_id='ENST00000275493':
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="sd">"""</span>
@@ -8616,7 +8623,7 @@ CCACGGAGGATAGTATGAGCCCTAAAAATCCAGACTCTTTCGATACCCAGGACCAAGCCACAGCAGGTCCTCCATCCCAA
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="sd">"""A sequence of a specific Exon or Intron"""</span>
@@ -8657,7 +8664,7 @@ GTAAGTCAGTGAACAGCCTCAGACCCATGTGTGACCGCCCCTCTCTTCCTTCACTTGCTTAGGTGATTGGATTTGTTTTC
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Optional: compare AA sequence with Ensembl REST API</span>
@@ -8692,7 +8699,7 @@ GTAAGTCAGTGAACAGCCTCAGACCCATGTGTGACCGCCCCTCTCTTCCTTCACTTGCTTAGGTGATTGGATTTGTTTTC
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="sd">"""</span>
@@ -8729,7 +8736,7 @@ GTAAGTCAGTGAACAGCCTCAGACCCATGTGTGACCGCCCCTCTCTTCCTTCACTTGCTTAGGTGATTGGATTTGTTTTC
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="sd">"""</span>
@@ -8766,7 +8773,7 @@ GTAAGTCAGTGAACAGCCTCAGACCCATGTGTGACCGCCCCTCTCTTCCTTCACTTGCTTAGGTGATTGGATTTGTTTTC
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="sd">"""</span>
@@ -8799,7 +8806,7 @@ GTAAGTCAGTGAACAGCCTCAGACCCATGTGTGACCGCCCCTCTCTTCCTTCACTTGCTTAGGTGATTGGATTTGTTTTC
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="sd">"""</span>
@@ -8832,7 +8839,7 @@ GTAAGTCAGTGAACAGCCTCAGACCCATGTGTGACCGCCCCTCTCTTCCTTCACTTGCTTAGGTGATTGGATTTGTTTTC
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="sd">'''</span>
@@ -8866,7 +8873,7 @@ GTAAGTCAGTGAACAGCCTCAGACCCATGTGTGACCGCCCCTCTCTTCCTTCACTTGCTTAGGTGATTGGATTTGTTTTC
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="sd">'''</span>
@@ -8905,7 +8912,7 @@ GTAAGTCAGTGAACAGCCTCAGACCCATGTGTGACCGCCCCTCTCTTCCTTCACTTGCTTAGGTGATTGGATTTGTTTTC
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="sd">"""</span>
@@ -8948,7 +8955,7 @@ GTAAGTCAGTGAACAGCCTCAGACCCATGTGTGACCGCCCCTCTCTTCCTTCACTTGCTTAGGTGATTGGATTTGTTTTC
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="sd">"""</span>
@@ -8993,7 +9000,7 @@ It is possible to specify a GFF3 file, or instead to provide a dataframe of the 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># loading GFF3 file into a dataframe, and returning a tuple containing it, and a subset of it, which contains only rows with Type values that are genes</span>
@@ -9009,7 +9016,7 @@ It is possible to specify a GFF3 file, or instead to provide a dataframe of the 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># now instantiating using the dataframe (much faster)</span>
@@ -9029,20 +9036,20 @@ It is possible to specify a GFF3 file, or instead to provide a dataframe of the 
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Gene name=EGFR, Gene ID=ENSG00000146648
-Source=Input DataFrame (ID=6071458960, size=(3418758, 9)). (Gene type DataFrame (ID=12765222992, size=(63241, 11)))
+<pre>Gene=EGFR, Gene name=EGFR, Gene ID=ENSG00000146648
+Source=Input DataFrame (ID=13184034960, size=(3456533, 9)). (Gene type DataFrame (ID=13065556816, size=(63140, 11)))
 Positive strand=True.
 Type=protein_coding, version=21.
 Description=epidermal growth factor receptor [Source:HGNC Symbol%3BAcc:HGNC:3236]
 Gene region=chr7:55,019,017-55,211,628.
-11 transcripts.
-Gene name=BRCA1, Gene ID=ENSG00000012048
-Source=Input DataFrame (ID=6071458960, size=(3418758, 9)). (Gene type DataFrame (ID=12765222992, size=(63241, 11)))
+13 transcripts.
+Gene=BRCA1, Gene name=BRCA1, Gene ID=ENSG00000012048
+Source=Input DataFrame (ID=13184034960, size=(3456533, 9)). (Gene type DataFrame (ID=13065556816, size=(63140, 11)))
 Positive strand=False.
-Type=protein_coding, version=25.
+Type=protein_coding, version=26.
 Description=BRCA1 DNA repair associated [Source:HGNC Symbol%3BAcc:HGNC:1100]
 Gene region=chr17:43,044,295-43,170,245.
-37 transcripts.
+41 transcripts.
 </pre>
 </div>
 </div>
@@ -9053,7 +9060,7 @@ Gene region=chr17:43,044,295-43,170,245.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Another option</span>
@@ -9073,20 +9080,20 @@ Gene region=chr17:43,044,295-43,170,245.
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Gene name=EGFR, Gene ID=ENSG00000146648
-Source=Input DataFrame (ID=6071458960, size=(3418758, 9)). (Gene type DataFrame (ID=12765222992, size=(63241, 11)))
+<pre>Gene=EGFR, Gene name=EGFR, Gene ID=ENSG00000146648
+Source=Input DataFrame (ID=13184034960, size=(3456533, 9)). (Gene type DataFrame (ID=13065556816, size=(63140, 11)))
 Positive strand=True.
 Type=protein_coding, version=21.
 Description=epidermal growth factor receptor [Source:HGNC Symbol%3BAcc:HGNC:3236]
 Gene region=chr7:55,019,017-55,211,628.
-11 transcripts.
-Gene name=BRCA1, Gene ID=ENSG00000012048
-Source=Input DataFrame (ID=6071458960, size=(3418758, 9)). (Gene type DataFrame (ID=12765222992, size=(63241, 11)))
+13 transcripts.
+Gene=BRCA1, Gene name=BRCA1, Gene ID=ENSG00000012048
+Source=Input DataFrame (ID=13184034960, size=(3456533, 9)). (Gene type DataFrame (ID=13065556816, size=(63140, 11)))
 Positive strand=False.
-Type=protein_coding, version=25.
+Type=protein_coding, version=26.
 Description=BRCA1 DNA repair associated [Source:HGNC Symbol%3BAcc:HGNC:1100]
 Gene region=chr17:43,044,295-43,170,245.
-37 transcripts.
+41 transcripts.
 </pre>
 </div>
 </div>
@@ -9097,7 +9104,7 @@ Gene region=chr17:43,044,295-43,170,245.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># another example is to instantiate by specifying your GFF3 file</span>
@@ -9118,13 +9125,13 @@ Gene region=chr17:43,044,295-43,170,245.
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Loading /Users/yoramzarai/work/mystuff/Ramot/Projects/Cancer_mut/Data/Ensembl_gene_annotation/Homo_sapiens.GRCh38.110.gff3.gz to a dataframe...Done.
-Gene name=EGFR, Gene ID=ENSG00000146648
+Gene=EGFR, Gene name=EGFR, Gene ID=ENSG00000146648
 Source=/Users/yoramzarai/work/mystuff/Ramot/Projects/Cancer_mut/Data/Ensembl_gene_annotation/Homo_sapiens.GRCh38.110.gff3.gz
 Positive strand=True.
 Type=protein_coding, version=21.
 Description=epidermal growth factor receptor [Source:HGNC Symbol%3BAcc:HGNC:3236]
 Gene region=chr7:55,019,017-55,211,628.
-11 transcripts.
+13 transcripts.
 </pre>
 </div>
 </div>
@@ -9135,7 +9142,7 @@ Gene region=chr7:55,019,017-55,211,628.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Another option</span>
@@ -9154,13 +9161,13 @@ Gene region=chr7:55,019,017-55,211,628.
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Loading /Users/yoramzarai/work/mystuff/Ramot/Projects/Cancer_mut/Data/Ensembl_gene_annotation/Homo_sapiens.GRCh38.110.gff3.gz to a dataframe...Done.
-Gene name=EGFR, Gene ID=ENSG00000146648
+Gene=EGFR, Gene name=EGFR, Gene ID=ENSG00000146648
 Source=/Users/yoramzarai/work/mystuff/Ramot/Projects/Cancer_mut/Data/Ensembl_gene_annotation/Homo_sapiens.GRCh38.110.gff3.gz
 Positive strand=True.
 Type=protein_coding, version=21.
 Description=epidermal growth factor receptor [Source:HGNC Symbol%3BAcc:HGNC:3236]
 Gene region=chr7:55,019,017-55,211,628.
-11 transcripts.
+13 transcripts.
 </pre>
 </div>
 </div>
@@ -9171,7 +9178,7 @@ Gene region=chr7:55,019,017-55,211,628.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [24]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># finally, you can load your GFF3 file into a dataframe, and instantiate with that dataframe (and its gene subset dataframe)</span>
@@ -9194,13 +9201,13 @@ Gene region=chr7:55,019,017-55,211,628.
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Loading GFF3 file to a dataframe...
 Instantiating...
-Gene name=EGFR, Gene ID=ENSG00000146648
-Source=Input DataFrame (ID=6305248528, size=(3415686, 9)). (Gene type DataFrame (ID=12763332432, size=(62754, 11)))
+Gene=EGFR, Gene name=EGFR, Gene ID=ENSG00000146648
+Source=Input DataFrame (ID=13115253712, size=(3415686, 9)). (Gene type DataFrame (ID=13459436880, size=(62754, 11)))
 Positive strand=True.
 Type=protein_coding, version=21.
 Description=epidermal growth factor receptor [Source:HGNC Symbol%3BAcc:HGNC:3236]
 Gene region=chr7:55,019,017-55,211,628.
-11 transcripts.
+13 transcripts.
 </pre>
 </div>
 </div>
@@ -9211,7 +9218,7 @@ Gene region=chr7:55,019,017-55,211,628.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Another option</span>
@@ -9230,13 +9237,13 @@ Gene region=chr7:55,019,017-55,211,628.
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Gene name=EGFR, Gene ID=ENSG00000146648
-Source=Input DataFrame (ID=6302966480, size=(3415686, 9)). (Gene type DataFrame (ID=6332357584, size=(62754, 11)))
+<pre>Gene=EGFR, Gene name=EGFR, Gene ID=ENSG00000146648
+Source=Input DataFrame (ID=13112932496, size=(3415686, 9)). (Gene type DataFrame (ID=13142330896, size=(62754, 11)))
 Positive strand=True.
 Type=protein_coding, version=21.
 Description=epidermal growth factor receptor [Source:HGNC Symbol%3BAcc:HGNC:3236]
 Gene region=chr7:55,019,017-55,211,628.
-11 transcripts.
+13 transcripts.
 </pre>
 </div>
 </div>
